@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/theme/theme.dart';
+import 'package:tinnitus/data/controllers/recommendations_controller.dart';
+import 'package:tinnitus/data/models/severity.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 import 'package:tinnitus/presentation/widgets/button.dart';
 
@@ -12,9 +15,12 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  int currentQuestionIndex = 0;
-  final List<double> answers = List.filled(12, 0.5);
+  final recommendationsController = Get.find<RecommendationsController>();
   final PageController pageController = PageController();
+
+  int currentQuestionIndex = 0;
+  Severity severity = Severity.initial(12);
+  final List<double> sliderValues = List.filled(12, 0.5);
 
   final List<String> questionKeys = [
     LocaleData.question1,
@@ -33,7 +39,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void saveAnswer(double value) {
     setState(() {
-      answers[currentQuestionIndex] = value;
+      sliderValues[currentQuestionIndex] = value;
+      severity.answers[currentQuestionIndex] =
+          AnswerValue.values[(value * (AnswerValue.values.length - 1)).round()];
     });
   }
 
@@ -50,6 +58,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   }
 
+  Future<void> finishQuiz() async {
+    await recommendationsController.saveSeverity(severity);
+    await recommendationsController.setShowOnboarding();
+  }
+
   void previousQuestion() {
     if (currentQuestionIndex > 0) {
       setState(() => currentQuestionIndex--);
@@ -59,31 +72,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         curve: Curves.easeInOut,
       );
     }
-  }
-
-  void finishQuiz() {
-    print('Quiz completed! Answers: $answers');
-
-    // Here you would typically navigate to the next screen or save data
-    // Navigator.of(context).pushReplacement(
-    //   MaterialPageRoute(builder: (context) => HomeScreen(quizResults: _answers)),
-    // );
-  }
-
-  String getSliderValueLabel(double value) {
-    if (value <= 0.33) {
-      return LocaleData.scalarlow.getString(context);
-    } else if (value <= 0.67) {
-      return LocaleData.scalarmid.getString(context);
-    } else {
-      return LocaleData.scalarhigh.getString(context);
-    }
-  }
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
   }
 
   @override
@@ -109,8 +97,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Text(
                       LocaleData.back.getString(context),
                       style: context.texts.labelSmall,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ),
@@ -121,14 +107,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     minHeight: 14,
                     value: (currentQuestionIndex + 1) / questionKeys.length,
                     backgroundColor: context.colors.surfaceContainerLow,
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      context.colors.primary,
-                    ),
+                    valueColor: AlwaysStoppedAnimation(context.colors.primary),
                   ),
                 ),
                 gap24,
                 GestureDetector(
-                  onTap: previousQuestion,
+                  onTap: finishQuiz,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                       vertical: 6,
@@ -141,8 +125,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Text(
                       LocaleData.skip.getString(context),
                       style: context.texts.labelSmall,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ),
@@ -152,12 +134,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: PageView.builder(
                 controller: pageController,
                 physics: const NeverScrollableScrollPhysics(),
-                onPageChanged: (index) {
-                  setState(() => currentQuestionIndex = index);
-                },
                 itemCount: questionKeys.length,
                 itemBuilder: (context, index) {
-                  return buildQuestionPage(questionKeys[index], answers[index]);
+                  return buildQuestionPage(
+                    questionKeys[index],
+                    sliderValues[index],
+                  );
                 },
               ),
             ),
@@ -183,12 +165,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             textAlign: TextAlign.center,
           ),
           gap32,
-          gap32,
-          gap32,
           buildAnswerSlider(currentValue),
         ],
       ),
     );
+  }
+
+  String getSliderValueLabel(double value) {
+    if (value <= 0.33) return LocaleData.scalarlow.getString(context);
+    if (value <= 0.67) return LocaleData.scalarmid.getString(context);
+    return LocaleData.scalarhigh.getString(context);
   }
 
   Widget buildAnswerSlider(double currentValue) {
@@ -199,7 +185,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           min: 0.0,
           max: 1.0,
           divisions: 2,
-          padding: EdgeInsets.zero,
           label: getSliderValueLabel(currentValue),
           onChanged: saveAnswer,
         ),
@@ -207,32 +192,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            buildScaleLabel(
               LocaleData.scalarlow.getString(context),
-              style: TextStyle(
-                fontWeight:
-                    currentValue <= 0.33 ? FontWeight.bold : FontWeight.normal,
-              ),
+              currentValue <= 0.33,
             ),
-            Text(
+            buildScaleLabel(
               LocaleData.scalarmid.getString(context),
-              style: TextStyle(
-                fontWeight:
-                    currentValue > 0.33 && currentValue <= 0.67
-                        ? FontWeight.bold
-                        : FontWeight.normal,
-              ),
+              0.33 < currentValue && currentValue <= 0.67,
             ),
-            Text(
+            buildScaleLabel(
               LocaleData.scalarhigh.getString(context),
-              style: TextStyle(
-                fontWeight:
-                    currentValue > 0.67 ? FontWeight.bold : FontWeight.normal,
-              ),
+              currentValue > 0.67,
             ),
           ],
         ),
       ],
+    );
+  }
+
+  Widget buildScaleLabel(String text, bool isBold) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+      ),
     );
   }
 }

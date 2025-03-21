@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/router.dart';
 import 'package:tinnitus/core/theme/theme.dart';
+import 'package:tinnitus/data/controllers/recommendations_controller.dart';
 
 class TinnitusApp extends StatefulWidget {
   const TinnitusApp({super.key});
@@ -12,6 +14,7 @@ class TinnitusApp extends StatefulWidget {
 
 class _TinnitusAppState extends State<TinnitusApp> {
   FlutterLocalization localization = FlutterLocalization.instance;
+  final recommendationsController = Get.find<RecommendationsController>();
 
   void configureLocalization() {
     localization
@@ -31,13 +34,18 @@ class _TinnitusAppState extends State<TinnitusApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
-      themeMode: ThemeMode.light,
-      theme: appTheme,
-      supportedLocales: localization.supportedLocales,
-      localizationsDelegates: localization.localizationsDelegates,
+    return Obx(
+      () => MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: router(
+          hasCompletedOnboarding:
+              recommendationsController.hasCompletedOnboarding.value,
+        ),
+        themeMode: ThemeMode.light,
+        theme: appTheme,
+        supportedLocales: localization.supportedLocales,
+        localizationsDelegates: localization.localizationsDelegates,
+      ),
     );
   }
 }

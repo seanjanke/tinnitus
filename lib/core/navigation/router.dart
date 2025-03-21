@@ -12,8 +12,8 @@ import 'package:tinnitus/presentation/pages/sos/sos_screen.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
-final GoRouter router = GoRouter(
-  initialLocation: Routes.onboarding,
+GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
+  initialLocation: hasCompletedOnboarding ? Routes.home : Routes.onboarding,
   routes: [
     StatefulShellRoute.indexedStack(
       pageBuilder:

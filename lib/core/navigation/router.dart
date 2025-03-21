@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/presentation/pages/chat/chat_screen.dart';
+import 'package:tinnitus/presentation/pages/filter/filter_screen.dart';
 import 'package:tinnitus/presentation/pages/home/home_screen.dart';
 import 'package:tinnitus/presentation/pages/main/main_screen.dart';
 import 'package:tinnitus/presentation/pages/profile/profile_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/pages/language_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/settings_screen.dart';
+import 'package:tinnitus/presentation/pages/sos/sos_screen.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
@@ -63,5 +65,7 @@ final GoRouter router = GoRouter(
       path: Routes.language,
       builder: (context, state) => LanguageScreen(),
     ),
+    GoRoute(path: Routes.filter, builder: (context, state) => FilterScreen()),
+    GoRoute(path: Routes.sos, builder: (context, state) => SOSScreen()),
   ],
 );

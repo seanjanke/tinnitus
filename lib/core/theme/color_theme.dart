@@ -5,7 +5,7 @@ final surface = Colors.grey.shade100;
 final neutralLowest = Colors.grey.shade200;
 final neutralLow = Colors.grey.shade300;
 final neutralHigh = Colors.grey.shade400;
-final neutralHighest = Colors.grey.shade700;
+final neutralHighest = Colors.grey.shade600;
 
 final error = Colors.red;
 

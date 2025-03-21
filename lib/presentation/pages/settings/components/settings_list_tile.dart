@@ -13,6 +13,7 @@ class SettingsListTile extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: padding12,
+        margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
           color: context.colors.surface,
           borderRadius: circ12,

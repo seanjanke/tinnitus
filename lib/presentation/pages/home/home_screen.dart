@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
+import 'package:tinnitus/data/models/recom.dart';
+import 'package:tinnitus/data/models/recom_category.dart';
+import 'package:tinnitus/presentation/pages/home/components/recommendation_tile.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,8 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: safeArea,
+        minimum: safeAreaNoBottom,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -119,6 +123,37 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            gap24,
+            Wrap(
+              spacing: 12,
+              runSpacing: 10,
+              children:
+                  RecommendationCategory.values.map((category) {
+                    return Container(
+                      padding: padding8,
+                      decoration: BoxDecoration(
+                        color: context.colors.surface,
+                        borderRadius: circ20,
+                        border: Border.all(
+                          color: context.colors.surfaceContainerLowest,
+                          width: 1,
+                        ),
+                      ),
+                      child: Text(category.displayName),
+                    );
+                  }).toList(),
+            ),
+            gap32,
+            Expanded(
+              child: ListView.builder(
+                itemCount: allRecommendations.length,
+                itemBuilder: (context, index) {
+                  final recommendation = allRecommendations[index];
+
+                  return RecommendationTile(recommendation: recommendation);
+                },
               ),
             ),
           ],

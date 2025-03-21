@@ -11,7 +11,10 @@ class SOSScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Appbar(onTap: context.pop, title: LocaleData.sos),
-      body: SafeArea(minimum: safeArea, child: Column(children: [])),
+      body: SafeArea(minimum: safeArea, child: Column(children: [
+           
+          ],
+        )),
     );
   }
 }

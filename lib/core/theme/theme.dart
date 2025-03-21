@@ -48,3 +48,4 @@ const padding16 = EdgeInsets.all(16);
 const padding20 = EdgeInsets.all(20);
 
 const safeArea = EdgeInsets.all(20);
+const safeAreaNoBottom = EdgeInsets.only(left: 20, right: 20, top: 20);

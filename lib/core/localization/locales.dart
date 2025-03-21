@@ -37,6 +37,9 @@ mixin LocaleData {
   static const scalarlow = 'scalarlow';
   static const scalarmid = 'scalarmid';
   static const scalarhigh = 'scalarhigh';
+  static const back = 'back';
+  static const skip = 'skip';
+  static const next = 'next';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -74,6 +77,9 @@ mixin LocaleData {
     scalarlow: 'Not True',
     scalarmid: 'Partially True',
     scalarhigh: 'True',
+    back: 'Back',
+    skip: 'Skip',
+    next: 'Next',
   };
 
   static const Map<String, dynamic> de = {
@@ -112,5 +118,8 @@ mixin LocaleData {
     scalarlow: 'Stimmt nicht',
     scalarmid: 'Stimmt teilweise',
     scalarhigh: 'Stimmt',
+    back: 'Zurück',
+    skip: 'Überspringen',
+    next: 'Weiter',
   };
 }

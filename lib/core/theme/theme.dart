@@ -40,6 +40,7 @@ var circ8 = BorderRadius.circular(8);
 var circ12 = BorderRadius.circular(12);
 var circ16 = BorderRadius.circular(16);
 var circ20 = BorderRadius.circular(20);
+var circ60 = BorderRadius.circular(60);
 
 const padding4 = EdgeInsets.all(4);
 const padding8 = EdgeInsets.all(8);

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
-import 'package:tinnitus/data/models/recom.dart';
+import 'package:tinnitus/data/controllers/recommendations_controller.dart';
 import 'package:tinnitus/data/models/recom_category.dart';
 import 'package:tinnitus/presentation/pages/home/components/recommendation_tile.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
@@ -16,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final searchInputController = TextEditingController();
+  final recommendationsController = Get.find<RecommendationsController>();
 
   @override
   Widget build(BuildContext context) {
@@ -147,13 +149,17 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             gap32,
             Expanded(
-              child: ListView.builder(
-                itemCount: allRecommendations.length,
-                itemBuilder: (context, index) {
-                  final recommendation = allRecommendations[index];
+              child: Obx(
+                () => ListView.builder(
+                  itemCount:
+                      recommendationsController.userRecommendations.length,
+                  itemBuilder: (context, index) {
+                    final recommendation =
+                        recommendationsController.userRecommendations[index];
 
-                  return RecommendationTile(recommendation: recommendation);
-                },
+                    return RecommendationTile(recommendation: recommendation);
+                  },
+                ),
               ),
             ),
           ],

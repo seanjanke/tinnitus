@@ -4,6 +4,7 @@ import 'package:tinnitus/presentation/pages/chat/chat_screen.dart';
 import 'package:tinnitus/presentation/pages/filter/filter_screen.dart';
 import 'package:tinnitus/presentation/pages/home/home_screen.dart';
 import 'package:tinnitus/presentation/pages/main/main_screen.dart';
+import 'package:tinnitus/presentation/pages/onboarding/onboarding_screen.dart';
 import 'package:tinnitus/presentation/pages/profile/profile_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/pages/language_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/settings_screen.dart';
@@ -12,7 +13,7 @@ import 'package:tinnitus/presentation/pages/sos/sos_screen.dart';
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 final GoRouter router = GoRouter(
-  initialLocation: Routes.home,
+  initialLocation: Routes.onboarding,
   routes: [
     StatefulShellRoute.indexedStack(
       pageBuilder:
@@ -67,5 +68,9 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(path: Routes.filter, builder: (context, state) => FilterScreen()),
     GoRoute(path: Routes.sos, builder: (context, state) => SOSScreen()),
+    GoRoute(
+      path: Routes.onboarding,
+      builder: (context, state) => OnboardingScreen(),
+    ),
   ],
 );

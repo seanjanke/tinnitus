@@ -6,4 +6,6 @@ class Routes {
   static const String home = '/home';
   static const String chat = '/chat';
   static const String profile = '/profile';
+  static const String settings = '/settings';
+  static const String language = '/language';
 }

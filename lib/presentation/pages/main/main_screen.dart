@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
 class MainScreen extends StatelessWidget {
@@ -36,7 +37,7 @@ class MainScreen extends StatelessWidget {
                             : context.bottomNavTheme.unselectedItemColor!,
                     size: 28,
                   ),
-                  label: 'Today',
+                  label: LocaleData.home.getString(context),
                   //label: LocaleData.scan.getString(context),
                 ),
                 BottomNavigationBarItem(
@@ -48,7 +49,7 @@ class MainScreen extends StatelessWidget {
                             : context.bottomNavTheme.unselectedItemColor!,
                     size: 28,
                   ),
-                  label: 'Chat',
+                  label: LocaleData.chat.getString(context),
                   // label: LocaleData.history.getString(context),
                 ),
                 BottomNavigationBarItem(
@@ -60,7 +61,7 @@ class MainScreen extends StatelessWidget {
                             : context.bottomNavTheme.unselectedItemColor!,
                     size: 28,
                   ),
-                  label: 'Profile',
+                  label: LocaleData.profile.getString(context),
                   // label: LocaleData.settings.getString(context),
                 ),
               ],

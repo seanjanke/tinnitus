@@ -68,7 +68,10 @@ GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
     GoRoute(path: Routes.filter, builder: (context, state) => FilterScreen()),
     GoRoute(
       path: Routes.onboarding,
-      builder: (context, state) => OnboardingScreen(),
+      builder: (context, state) {
+        final isInitialOnboarding = state.extra as bool? ?? true;
+        return OnboardingScreen(isInitialOnboarding: isInitialOnboarding);
+      },
     ),
   ],
 );

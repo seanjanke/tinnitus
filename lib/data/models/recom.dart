@@ -115,7 +115,6 @@ final allRecommendations = <Recommendation>[
     icon: FontAwesomeIcons.tablets,
     iconColor: iconColors[4],
   ),
-
   // Category: Sleep (Sl & So)
   Recommendation(
     id: 11, // Melatonin

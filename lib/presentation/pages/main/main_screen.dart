@@ -33,7 +33,7 @@ class MainScreen extends StatelessWidget {
                     navigationShell.currentIndex == 0
                         ? context.bottomNavTheme.selectedItemColor!
                         : context.bottomNavTheme.unselectedItemColor!,
-                size: 24,
+                size: 22,
               ),
               label: LocaleData.home.getString(context),
               //label: LocaleData.scan.getString(context),

@@ -26,8 +26,8 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    LocaleData.profile.getString(context),
-                    style: context.texts.headlineMedium,
+                    LocaleData.yourProfile.getString(context),
+                    style: context.texts.headlineSmall,
                   ),
                 ),
                 gap12,
@@ -130,7 +130,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   gap16,
                   InkWell(
-                    onTap: () => context.push(Routes.onboarding),
+                    onTap: () => context.push(Routes.onboarding, extra: false),
                     child: Text(
                       'Erneut testen',
                       style: context.texts.labelSmall,

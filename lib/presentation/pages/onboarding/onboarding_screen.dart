@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/controllers/user_controller.dart';
@@ -8,7 +9,8 @@ import 'package:tinnitus/presentation/util/easy_theme.dart';
 import 'package:tinnitus/presentation/widgets/button.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+  final bool isInitialOnboarding;
+  const OnboardingScreen({required this.isInitialOnboarding, super.key});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -64,7 +66,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void previousQuestion() {
-    if (currentQuestionIndex > 0) {
+    if (currentQuestionIndex == 0 && !widget.isInitialOnboarding) {
+      context.pop();
+    } else if (currentQuestionIndex > 0) {
       setState(() => currentQuestionIndex--);
       pageController.animateToPage(
         currentQuestionIndex,
@@ -106,8 +110,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     borderRadius: circ12,
                     minHeight: 14,
                     value: (currentQuestionIndex + 1) / questionKeys.length,
-                    backgroundColor: context.colors.surfaceContainerLow,
-                    valueColor: AlwaysStoppedAnimation(context.colors.primary),
+                    backgroundColor: context.colors.surface,
+                    valueColor: AlwaysStoppedAnimation(
+                      context.colors.surfaceContainerHighest,
+                    ),
                   ),
                 ),
                 gap20,
@@ -185,37 +191,51 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           min: 0.0,
           max: 1.0,
           divisions: 2,
+          padding: EdgeInsets.zero,
           label: getSliderValueLabel(currentValue),
           onChanged: saveAnswer,
         ),
         gap24,
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            buildScaleLabel(
-              LocaleData.scalarlow.getString(context),
-              currentValue <= 0.33,
+            Expanded(
+              child: Text(
+                LocaleData.scalarlow.getString(context),
+                style: TextStyle(
+                  fontWeight:
+                      currentValue <= 0.33
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                ),
+              ),
             ),
-            buildScaleLabel(
-              LocaleData.scalarmid.getString(context),
-              0.33 < currentValue && currentValue <= 0.67,
+            Expanded(
+              child: Center(
+                child: Text(
+                  LocaleData.scalarmid.getString(context),
+                  style: TextStyle(
+                    fontWeight:
+                        0.33 < currentValue && currentValue <= 0.67
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
-            buildScaleLabel(
-              LocaleData.scalarhigh.getString(context),
-              currentValue > 0.67,
+            Expanded(
+              child: Text(
+                LocaleData.scalarhigh.getString(context),
+                style: TextStyle(
+                  fontWeight:
+                      currentValue > 0.67 ? FontWeight.bold : FontWeight.normal,
+                ),
+                textAlign: TextAlign.end,
+              ),
             ),
           ],
         ),
       ],
-    );
-  }
-
-  Widget buildScaleLabel(String text, bool isBold) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
-      ),
     );
   }
 }

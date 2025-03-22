@@ -12,6 +12,7 @@ mixin LocaleData {
   static const home = 'home';
   static const chat = 'chat';
   static const profile = 'profile';
+  static const yourProfile = 'yourProfile';
   static const treatments = 'treatments';
   static const settings = 'settings';
   static const language = 'language';
@@ -138,8 +139,8 @@ mixin LocaleData {
         'I often think about whether the ringing in my ears will ever go away.',
     question11: 'I am a victim of my ringing in my ears.',
     question12: 'The ringing in my ears affected my concentration.',
-    scalarlow: 'Not True',
-    scalarmid: 'Partially True',
+    scalarlow: 'False',
+    scalarmid: 'Partially',
     scalarhigh: 'True',
     category1: 'Hearing problem',
     category2: 'Tinnitus-related',
@@ -232,6 +233,7 @@ mixin LocaleData {
         'The tinnitus is a significant psychological burden for you - therapeutic measures should be considered.',
     severityLevel4Description:
         'Your tinnitus is having a major impact on your well-being - comprehensive specialist care is urgently recommended.',
+    yourProfile: 'Your Profile',
   };
 
   static const Map<String, dynamic> de = {
@@ -267,8 +269,8 @@ mixin LocaleData {
         'Ich denke oft darüber nach, ob die Ohrgeräusche jemals weggehen werden.',
     question11: 'Ich bin Opfer meiner Ohrgeräusche.',
     question12: 'Die Ohrgeräusche haben meine Konzentration beeinträchtigt.',
-    scalarlow: 'Stimmt nicht',
-    scalarmid: 'Stimmt teilweise',
+    scalarlow: 'Falsch',
+    scalarmid: 'Teilweise',
     scalarhigh: 'Stimmt',
     description1:
         'Verbessert das Hörvermögen von Patienten mit Hörverlust und kann die Tinnituswahrnehmung durch Verstärkung der Umgebungsgeräusche verringern.',
@@ -354,5 +356,6 @@ mixin LocaleData {
         'Der Tinnitus stellt eine deutliche psychische Belastung für Sie dar – therapeutische Maßnahmen sollten in Betracht gezogen werden.',
     severityLevel4Description:
         'Ihr Tinnitus wirkt sich stark auf Ihr Wohlbefinden aus – eine umfassende fachliche Betreuung ist dringend empfehlenswert.',
+    yourProfile: 'Dein Profil',
   };
 }

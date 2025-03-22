@@ -19,11 +19,11 @@ var bottomNavBarTheme = BottomNavigationBarThemeData(
   type: BottomNavigationBarType.fixed,
   showSelectedLabels: true,
   showUnselectedLabels: true,
-  selectedLabelStyle: textTheme.bodySmall,
-  unselectedLabelStyle: textTheme.bodySmall,
+  selectedLabelStyle: textTheme.bodyMedium,
+  unselectedLabelStyle: textTheme.bodyMedium,
   selectedIconTheme: const IconThemeData(size: 20),
   unselectedIconTheme: const IconThemeData(size: 20),
-  selectedItemColor: colorScheme.primary,
+  selectedItemColor: colorScheme.onSurface,
   unselectedItemColor: colorScheme.surfaceContainerHigh,
 );
 

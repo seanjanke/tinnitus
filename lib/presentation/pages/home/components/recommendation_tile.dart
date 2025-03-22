@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/models/recom.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
@@ -21,12 +21,14 @@ class RecommendationTile extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 48,
-            height: 48,
-            child: HugeIcon(
-              icon: recommendation.icon,
-              color: context.colors.onSurface,
-              size: 32,
+            width: 56,
+            height: 56,
+            child: Center(
+              child: FaIcon(
+                recommendation.icon,
+                color: recommendation.iconColor,
+                size: 32,
+              ),
             ),
           ),
           gap16,

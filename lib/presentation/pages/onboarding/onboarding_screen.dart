@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/theme/theme.dart';
-import 'package:tinnitus/data/controllers/recommendations_controller.dart';
+import 'package:tinnitus/data/controllers/user_controller.dart';
 import 'package:tinnitus/data/models/severity.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 import 'package:tinnitus/presentation/widgets/button.dart';
@@ -15,7 +15,7 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final recommendationsController = Get.find<RecommendationsController>();
+  final userController = Get.find<UserController>();
   final PageController pageController = PageController();
 
   int currentQuestionIndex = 0;
@@ -59,8 +59,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   Future<void> finishQuiz() async {
-    await recommendationsController.saveSeverity(severity);
-    await recommendationsController.setShowOnboarding();
+    await userController.saveSeverity(severity);
+    await userController.setShowOnboarding();
   }
 
   void previousQuestion() {

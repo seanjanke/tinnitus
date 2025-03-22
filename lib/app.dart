@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/router.dart';
 import 'package:tinnitus/core/theme/theme.dart';
-import 'package:tinnitus/data/controllers/recommendations_controller.dart';
+import 'package:tinnitus/data/controllers/user_controller.dart';
 
 class TinnitusApp extends StatefulWidget {
   const TinnitusApp({super.key});
@@ -14,7 +14,7 @@ class TinnitusApp extends StatefulWidget {
 
 class _TinnitusAppState extends State<TinnitusApp> {
   FlutterLocalization localization = FlutterLocalization.instance;
-  final recommendationsController = Get.find<RecommendationsController>();
+  final userController = Get.find<UserController>();
 
   void configureLocalization() {
     localization
@@ -38,8 +38,7 @@ class _TinnitusAppState extends State<TinnitusApp> {
       () => MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: router(
-          hasCompletedOnboarding:
-              recommendationsController.hasCompletedOnboarding.value,
+          hasCompletedOnboarding: userController.hasCompletedOnboarding.value,
         ),
         themeMode: ThemeMode.light,
         theme: appTheme,

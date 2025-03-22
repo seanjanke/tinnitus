@@ -93,6 +93,7 @@ mixin LocaleData {
   static const skip = 'skip';
   static const next = 'next';
   static const forYou = 'forYou';
+  static const goodMorning = 'goodMorning';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -207,6 +208,7 @@ mixin LocaleData {
     skip: 'Skip',
     next: 'Next',
     forYou: 'Recommended For You',
+    goodMorning: 'Good Morning',
   };
 
   static const Map<String, dynamic> de = {
@@ -314,5 +316,6 @@ mixin LocaleData {
     skip: 'Überspringen',
     next: 'Weiter',
     forYou: 'Für dich empfohlen',
+    goodMorning: 'Guten Morgen',
   };
 }

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
-import 'package:tinnitus/data/controllers/recommendations_controller.dart';
+import 'package:tinnitus/data/controllers/user_controller.dart';
 import 'package:tinnitus/presentation/pages/profile/components/severity_answer_list_tile.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
@@ -13,7 +13,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recommendationsController = Get.find<RecommendationsController>();
+    final userController = Get.find<UserController>();
     final questionKeys = [
       LocaleData.question1,
       LocaleData.question2,
@@ -60,8 +60,7 @@ class ProfileScreen extends StatelessWidget {
             // symptoms and severity information
             Expanded(
               child: Obx(() {
-                final userSeverity =
-                    recommendationsController.userSeverity.value;
+                final userSeverity = userController.userSeverity.value;
 
                 return ListView.builder(
                   itemCount: userSeverity.answers.length,

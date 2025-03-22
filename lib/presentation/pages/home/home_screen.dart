@@ -5,6 +5,7 @@ import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/controllers/recommendations_controller.dart';
+import 'package:tinnitus/data/controllers/user_controller.dart';
 import 'package:tinnitus/presentation/pages/home/components/recommendation_tile.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
@@ -18,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final searchInputController = TextEditingController();
   final recommendationsController = Get.find<RecommendationsController>();
+  final userController = Get.find<UserController>();
 
   Widget buildForYou() {
     return Expanded(
@@ -58,14 +60,18 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 Expanded(
-                  child: Text(
-                    LocaleData.treatments.getString(context),
-                    style: context.texts.headlineMedium,
+                  child: Obx(
+                    () => Text(
+                      userController.currentUser.value.name.isNotEmpty
+                          ? '${LocaleData.goodMorning.getString(context)}, ${userController.currentUser.value.name}'
+                          : LocaleData.forYou.getString(context),
+                      style: context.texts.headlineSmall,
+                    ),
                   ),
                 ),
               ],
             ),
-            gap8,
+            gap16,
             IntrinsicHeight(
               child: Row(
                 children: [

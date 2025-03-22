@@ -15,9 +15,7 @@ import 'package:tinnitus/presentation/pages/welcome/welcome_screens.dart';
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
-  initialLocation:
-      Routes
-          .welcome, //hasCompletedOnboarding ? Routes.home : Routes.onboarding,
+  initialLocation: hasCompletedOnboarding ? Routes.home : Routes.onboarding,
   routes: [
     StatefulShellRoute.indexedStack(
       pageBuilder:

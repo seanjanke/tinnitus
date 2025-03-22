@@ -19,7 +19,7 @@ class _WelcomeScreensState extends State<WelcomeScreens> {
   final icons = [
     FontAwesomeIcons.handHoldingMedical,
     FontAwesomeIcons.solidFaceSmileWink,
-    FontAwesomeIcons.signature,
+    FontAwesomeIcons.solidGem,
     FontAwesomeIcons.magnifyingGlass,
   ];
 

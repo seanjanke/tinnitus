@@ -43,6 +43,19 @@ class LocalDBService {
     return await dbClient.insert('severity', severity.toMap());
   }
 
+  // Update Severity
+  Future<int> updateSeverity(Severity severity) async {
+    print('Updating severity');
+
+    final dbClient = await db;
+    return await dbClient.update(
+      'severity',
+      severity.toMap(),
+      where: 'id = ?',
+      whereArgs: [severity.id],
+    );
+  }
+
   // Get all Severity entries
   Future<List<Severity>> getSeverities() async {
     final dbClient = await db;

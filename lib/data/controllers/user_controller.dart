@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/data/models/severity.dart';
 import 'package:tinnitus/data/models/user_info.dart';
 import 'package:tinnitus/data/sources/local_db.dart';
@@ -22,8 +24,16 @@ class UserController extends GetxController {
     currentUser.value = AppUser(id: 0, name: 'Hacka Ton', age: 24);
   }
 
-  Future<void> saveSeverity(Severity severity) async {
-    await saveSeverityToLocalDb(severity);
+  Future<void> saveSeverity({
+    required Severity severity,
+    required bool isInitialOnboarding,
+    required BuildContext context,
+  }) async {
+    await saveSeverityToLocalDb(
+      severity: severity,
+      shouldInsert: isInitialOnboarding,
+      context: context,
+    );
     userSeverity.value = severity;
   }
 
@@ -40,9 +50,20 @@ class UserController extends GetxController {
     hasCompletedOnboarding.value = true;
   }
 
-  Future<void> saveSeverityToLocalDb(Severity severity) async {
+  Future<void> saveSeverityToLocalDb({
+    required Severity severity,
+    required bool shouldInsert,
+    required BuildContext context,
+  }) async {
     LocalDBService dbHelper = LocalDBService();
-    await dbHelper.insertSeverity(severity);
+    if (shouldInsert) {
+      await dbHelper.insertSeverity(severity);
+    } else {
+      await dbHelper.updateSeverity(severity);
+      if (context.mounted) {
+        context.pop();
+      }
+    }
   }
 
   Future<void> fetchSeverities() async {

@@ -94,10 +94,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       level: getSeverityLevel,
     );
 
-    print('Severity level: ${finalSeverity.level}');
-
-    // TODO: fix error here
-    await userController.saveSeverity(finalSeverity);
+    await userController.saveSeverity(
+      severity: finalSeverity,
+      isInitialOnboarding: widget.isInitialOnboarding,
+      context: context,
+    );
     await userController.setShowOnboarding();
   }
 

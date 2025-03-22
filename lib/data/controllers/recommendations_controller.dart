@@ -12,6 +12,7 @@ class RecommendationsController extends GetxController {
   Future<void> initilize() async {
     await loadUserRecommendations();
     await loadShowOnboarding();
+    await fetchSeverities();
   }
 
   Future<void> loadUserRecommendations() async {

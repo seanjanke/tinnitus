@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/models/severity.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
@@ -29,7 +30,7 @@ class SeverityAnswerListTile extends StatelessWidget {
           ),
           gap12,
           Text(
-            answer.displayName,
+            answer.displayName.getString(context),
             style: context.texts.bodyMedium!.copyWith(
               color: context.colors.surfaceContainerHigh,
             ),

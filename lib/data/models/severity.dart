@@ -1,14 +1,16 @@
+import 'package:tinnitus/core/localization/locales.dart';
+
 enum AnswerValue { trueValue, partiallyTrue, notTrue }
 
 extension AnswerValueExtension on AnswerValue {
   String get displayName {
     switch (this) {
       case AnswerValue.trueValue:
-        return "True";
+        return LocaleData.scalarhigh;
       case AnswerValue.partiallyTrue:
-        return "Partially True";
+        return LocaleData.scalarmid;
       case AnswerValue.notTrue:
-        return "Not True";
+        return LocaleData.scalarlow;
     }
   }
 }

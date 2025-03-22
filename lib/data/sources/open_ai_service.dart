@@ -16,7 +16,7 @@ class ChatService {
           'Authorization': 'Bearer $_apiKey',
         },
         body: jsonEncode({
-          "model": "gpt-4", // or "gpt-3.5-turbo"
+          "model": "gpt-4",
           "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": userMessage},

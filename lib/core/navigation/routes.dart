@@ -8,6 +8,5 @@ class Routes {
   static const String settings = '/settings';
   static const String language = '/language';
   static const String filter = '/filter';
-  static const String sos = '/sos';
   static const String onboarding = '/onboarding';
 }

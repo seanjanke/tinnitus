@@ -1,5 +1,5 @@
 enum RecommendationCategory {
-  hearningProblem,
+  hearingProblem,
   tinnitusRelated,
   emotionalDistress,
   otherComorbidities,
@@ -10,7 +10,7 @@ enum RecommendationCategory {
 
   String get displayName {
     switch (this) {
-      case RecommendationCategory.hearningProblem:
+      case RecommendationCategory.hearingProblem:
         return 'Hearing Problem';
       case RecommendationCategory.tinnitusRelated:
         return 'Tinnitus Related';

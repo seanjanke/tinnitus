@@ -8,7 +8,6 @@ import 'package:tinnitus/presentation/pages/onboarding/onboarding_screen.dart';
 import 'package:tinnitus/presentation/pages/profile/profile_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/pages/language_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/settings_screen.dart';
-import 'package:tinnitus/presentation/pages/sos/sos_screen.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
@@ -67,7 +66,6 @@ GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
       builder: (context, state) => LanguageScreen(),
     ),
     GoRoute(path: Routes.filter, builder: (context, state) => FilterScreen()),
-    GoRoute(path: Routes.sos, builder: (context, state) => SOSScreen()),
     GoRoute(
       path: Routes.onboarding,
       builder: (context, state) => OnboardingScreen(),

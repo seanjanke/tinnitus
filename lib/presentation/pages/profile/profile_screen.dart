@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
@@ -42,13 +43,21 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 gap12,
-                IconButton(
-                  onPressed: () => context.push(Routes.settings),
-                  icon: Icon(Icons.settings_rounded),
+                GestureDetector(
+                  onTap: () => context.push(Routes.settings),
+                  child: FaIcon(
+                    FontAwesomeIcons.gear,
+                    color: context.colors.surfaceContainerHigh,
+                  ),
                 ),
               ],
             ),
             gap24,
+            // personal information (name, age, etc.)
+
+            // preferences information
+
+            // symptoms and severity information
             Expanded(
               child: Obx(() {
                 final userSeverity =

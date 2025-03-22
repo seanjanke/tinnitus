@@ -23,7 +23,7 @@ var bottomNavBarTheme = BottomNavigationBarThemeData(
   unselectedLabelStyle: textTheme.bodySmall,
   selectedIconTheme: const IconThemeData(size: 20),
   unselectedIconTheme: const IconThemeData(size: 20),
-  selectedItemColor: colorScheme.onSurface,
+  selectedItemColor: colorScheme.primary,
   unselectedItemColor: colorScheme.surfaceContainerHighest,
 );
 

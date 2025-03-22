@@ -37,10 +37,61 @@ mixin LocaleData {
   static const scalarlow = 'scalarlow';
   static const scalarmid = 'scalarmid';
   static const scalarhigh = 'scalarhigh';
+  static const category1 = 'category1';
+  static const category2 = 'category2';
+  static const category3 = 'category3';
+  static const category4 = 'category4';
+  static const category5 = 'category5';
+  static const category6 = 'category6';
+  static const category7 = 'category7';
+  static const category8 = 'category8';
+  static const recommendation1 = 'recommendation1';
+  static const recommendation2 = 'recommendation2';
+  static const recommendation3 = 'recommendation3';
+  static const recommendation4 = 'recommendation4';
+  static const recommendation5 = 'recommendation5';
+  static const recommendation6 = 'recommendation6';
+  static const recommendation7 = 'recommendation7';
+  static const recommendation8 = 'recommendation8';
+  static const recommendation9 = 'recommendation9';
+  static const recommendation10 = 'recommendation10';
+  static const recommendation11 = 'recommendation11';
+  static const recommendation12 = 'recommendation12';
+  static const recommendation13 = 'recommendation13';
+  static const recommendation14 = 'recommendation14';
+  static const recommendation15 = 'recommendation15';
+  static const recommendation16 = 'recommendation16';
+  static const recommendation17 = 'recommendation17';
+  static const recommendation18 = 'recommendation18';
+  static const recommendation19 = 'recommendation19';
+  static const recommendation20 = 'recommendation20';
+  static const recommendation21 = 'recommendation21';
+  static const description1 = 'description1';
+  static const description2 = 'description2';
+  static const description3 = 'description3';
+  static const description4 = 'description4';
+  static const description5 = 'description5';
+  static const description6 = 'description6';
+  static const description7 = 'description7';
+  static const description8 = 'description8';
+  static const description9 = 'description9';
+  static const description10 = 'description10';
+  static const description11 = 'description11';
+  static const description12 = 'description12';
+  static const description13 = 'description13';
+  static const description14 = 'description14';
+  static const description15 = 'description15';
+  static const description16 = 'description16';
+  static const description17 = 'description17';
+  static const description18 = 'description18';
+  static const description19 = 'description19';
+  static const description20 = 'description20';
+  static const description21 = 'description21';
+  static const sendMessage = 'sendMessage';
+  static const chatWithAI = 'chatWithAI';
   static const back = 'back';
   static const skip = 'skip';
   static const next = 'next';
-  static const chocolateMeditation = 'chocolateMeditation';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -67,21 +118,93 @@ mixin LocaleData {
         'I worry that the ringing in my ears could damage my physical health.',
     question6: 'I find it difficult to relax because of the ringing in my ears',
     question7:
-        'My ri:ging in my ears is often so bad that I can not ignore it.',
+        'My ringing in my ears is often so bad that I can not ignore it.',
     question8:
-        'It ta:es me longer to fall asleep because of the ringing in my ears.',
+        'It takes me longer to fall asleep because of the ringing in my ears.',
     question9: 'I am more easily depressed because of the ringing in my ears.',
     question10:
-        'I ofte: think about whether the ringing in my ears will ever go away.',
+        'I often think about whether the ringing in my ears will ever go away.',
     question11: 'I am a victim of my ringing in my ears.',
     question12: 'The ringing in my ears affected my concentration.',
     scalarlow: 'Not True',
     scalarmid: 'Partially True',
     scalarhigh: 'True',
+    category1: 'Hearing problem',
+    category2: 'Tinnitus-related',
+    category3: 'Social Emotional Health (Emotional distress)',
+    category4: 'Other comorbidities-related',
+    category5: 'Sleep disturbances',
+    category6: 'Spiritual',
+    category7: 'Lifestyle',
+    category8: 'Somatic complaints',
+    recommendation1: 'Hearing aids',
+    recommendation2: 'Cochlear implant',
+    recommendation3: 'Tinnitus counseling',
+    recommendation4: 'Cognitive behavioural therapy',
+    recommendation5: 'Tinnitus retraining therapy',
+    recommendation6: 'Acceptance commitment therapy',
+    recommendation7: 'Music therapy',
+    recommendation8: 'Sound therapy',
+    recommendation9: 'Antidepressants',
+    recommendation10: 'Benzodiazepines',
+    recommendation11: 'Melatonin',
+    recommendation12: 'Cannabis',
+    recommendation13: 'Sleep hygiene',
+    recommendation14: 'Psilocybin',
+    recommendation15: 'Vipassana meditation',
+    recommendation16: 'Mindfulness',
+    recommendation17: 'Gut-brain diet recommendation',
+    recommendation18: 'No-dairy diet',
+    recommendation19: 'Emotional decoding',
+    recommendation20: 'Functional medicine referral',
+    recommendation21: 'Chocolate meditation',
+    description1:
+        'Improve hearing in patients with hearing loss and may reduce tinnitus perception by increasing ambient sound.',
+    description2:
+        'Can significantly reduce tinnitus perception in individuals with severe-to-profound bilateral sensorineural hearing loss.',
+    description3:
+        'Structured education to improve understanding of tinnitus and reduce distress; foundational part of tinnitus management.',
+    description4:
+        'The most evidence-supported psychological therapy for tinnitus; reduces distress and improves coping.',
+    description5:
+        'Combines directive counseling with sound enrichment aimed at habituation; long-term behavioral intervention.',
+    description6:
+        'A mindfulness-based behavioral therapy shown to reduce tinnitus distress in some individuals.',
+    description7:
+        'Music-based interventions may support relaxation and distraction but lack strong evidence as standalone therapy.',
+    description8:
+        'Use of external sounds (e.g. white noise) to reduce tinnitus contrast and promote habituation.',
+    description9:
+        'Used for treating comorbid depression or anxiety; not directly effective for tinnitus symptoms.',
+    description10:
+        'May reduce acute distress or aid sleep short-term; not recommended for long-term use due to dependence risk.',
+    description11:
+        'May support sleep quality in tinnitus patients; limited evidence for direct tinnitus relief.',
+    description12:
+        'Currently lacks reliable evidence and may worsen symptoms in some individuals.',
+    description13:
+        'Behavioral strategies to improve sleep hygiene; first-line recommendation for tinnitus-related insomnia.',
+    description14:
+        'Experimental psychedelic compound being researched; not approved for clinical use in tinnitus treatment.',
+    description15:
+        'Mindfulness meditation practice focused on body awareness and emotional balance; supports stress regulation.',
+    description16:
+        'Growing evidence supports mindfulness for reducing tinnitus-related distress and reactivity.',
+    description17:
+        'Focuses on gut-brain connection; may support mental health, though evidence for tinnitus is limited.',
+    description18:
+        'No strong evidence supports dairy elimination for tinnitus; trial only if lactose sensitivity is suspected.',
+    description19:
+        'Holistic approach investigating potential underlying issues; evidence in tinnitus care is still limited.',
+    description20:
+        'Psychodynamic or somatic methods to uncover emotional triggers; not clinically validated for tinnitus.',
+    description21:
+        'A sensory mindfulness exercise using chocolate; may help beginners engage with meditative awareness.',
+    sendMessage: 'Send Message',
+    chatWithAI: 'Chat with AI',
     back: 'Back',
     skip: 'Skip',
     next: 'Next',
-    chocolateMeditation: 'Chocolate Meditation',
   };
 
   static const Map<String, dynamic> de = {
@@ -120,9 +243,73 @@ mixin LocaleData {
     scalarlow: 'Stimmt nicht',
     scalarmid: 'Stimmt teilweise',
     scalarhigh: 'Stimmt',
+    description1:
+        'Verbessert das Hörvermögen von Patienten mit Hörverlust und kann die Tinnituswahrnehmung durch Verstärkung der Umgebungsgeräusche verringern.',
+    description2:
+        'Kann die Tinnituswahrnehmung bei Personen mit schwerem bis hochgradigem beidseitigem sensorineuralem Hörverlust deutlich verringern.',
+    description3:
+        'Strukturierte Ausbildung zur Verbesserung des Verständnisses von Tinnitus und zur Verringerung des Leidensdrucks; grundlegender Bestandteil des Tinnitus-Managements.',
+    description4:
+        'Die am besten belegte psychologische Therapie für Tinnitus; verringert den Leidensdruck und verbessert die Bewältigung.',
+    description5:
+        'Kombiniert direktive Beratung mit Geräuschanreicherung zur Gewöhnung; langfristige Verhaltensintervention. ',
+    description6:
+        'Eine auf Achtsamkeit basierende Verhaltenstherapie, die nachweislich den Tinnitus-Belastungsgrad bei einigen Personen reduziert.',
+    description7:
+        'Musikbasierte Interventionen können Entspannung und Ablenkung unterstützen, aber es gibt keine überzeugenden Beweise für eine eigenständige Therapie.',
+    description8:
+        'Verwendung von externen Klängen (z. B. weißes Rauschen), um den Tinnituskontrast zu verringern und die Gewöhnung zu fördern.',
+    description9:
+        'Wird zur Behandlung von komorbiden Depressionen oder Ängsten eingesetzt; nicht direkt wirksam bei Tinnitus-Symptomen.',
+    description10:
+        'Kann akuten Stress verringern oder kurzfristig den Schlaf fördern; aufgrund des Abhängigkeitsrisikos nicht für den Langzeitgebrauch empfohlen.',
+    description11:
+        'Kann die Schlafqualität bei Tinnitus-Patienten verbessern; begrenzte Beweise für eine direkte Linderung des Tinnitus.',
+    description12:
+        'Derzeit gibt es keine verlässlichen Beweise und bei einigen Personen können sich die Symptome verschlimmern.',
+    description13:
+        'Verhaltensstrategien zur Verbesserung der Schlafhygiene; Erstklassige Empfehlung für Tinnitus-bedingte Schlaflosigkeit.',
+    description14:
+        'Experimentelle psychedelische Substanz, die erforscht wird; nicht für den klinischen Einsatz in der Tinnitus-Behandlung zugelassen.',
+    description15:
+        'Achtsamkeitsmeditation, die sich auf Körperwahrnehmung und emotionales Gleichgewicht konzentriert; unterstützt die Stressregulierung.',
+    description16:
+        'Wachsende Beweise unterstützen Achtsamkeit zur Verringerung von tinnitusbedingtem Stress und Reaktivität. ',
+    description17:
+        'Konzentriert sich auf die Verbindung zwischen Darm und Gehirn; kann die psychische Gesundheit unterstützen, obwohl die Beweise für Tinnitus begrenzt sind.',
+    description18:
+        'Keine starken Beweise unterstützen den Verzicht auf Milchprodukte bei Tinnitus; Versuch nur bei Verdacht auf Laktoseempfindlichkeit. ',
+    description19:
+        'Ganzheitlicher Ansatz, der potenziell zugrundeliegende Probleme untersucht; die Evidenz in der Tinnitusbehandlung ist noch begrenzt.',
+    description20:
+        'Psychodynamische oder somatische Methoden, um emotionale Auslöser aufzudecken; nicht klinisch validiert für Tinnitus.',
+    description21:
+        'Eine sensorische Achtsamkeitsübung unter Verwendung von Schokolade; kann Anfängern helfen, sich mit meditativem Bewusstsein zu beschäftigen.',
+    recommendation1: 'Hörgeräte',
+    recommendation2: 'Cochlea-Implantat',
+    recommendation3: 'Tinnitus-Beratung',
+    recommendation4: 'Kognitive Verhaltenstherapie',
+    recommendation5: 'Tinnitus-Retraining-Therapie',
+    recommendation6: 'Akzeptanz- und Commitment-Therapie',
+    recommendation7: 'Musiktherapie',
+    recommendation8: 'Klangtherapie',
+    recommendation9: 'Antidepressiva',
+    recommendation10: 'Benzodiazepine',
+    recommendation11: 'Melatonin',
+    recommendation12: 'Cannabis',
+    recommendation13: 'Schlafhygiene',
+    recommendation14: 'Psilocybin',
+    recommendation15: 'Vipassana-Meditation',
+    recommendation16: 'Achtsamkeit',
+    recommendation17: 'Darm-Gehirn-Diätempfehlung',
+    recommendation18: 'Keine Milchprodukte',
+    recommendation19: 'Emotionales Decoding',
+    recommendation20: 'Überweisung zur funktionellen Medizin',
+    recommendation21: 'Schokoladenmeditation',
+    sendMessage: 'Nachricht senden',
+    chatWithAI: 'Mit KI chatten',
     back: 'Zurück',
     skip: 'Überspringen',
     next: 'Weiter',
-    chocolateMeditation: 'Schokoladenmeditation',
   };
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/models/recom.dart';
@@ -34,10 +35,13 @@ class RecommendationTile extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(recommendation.title, style: context.texts.labelMedium),
+                Text(
+                  recommendation.title.getString(context),
+                  style: context.texts.labelMedium,
+                ),
                 gap4,
                 Text(
-                  recommendation.description,
+                  recommendation.description.getString(context),
                   style: context.texts.bodyMedium!.copyWith(
                     color: context.colors.surfaceContainerHigh,
                   ),

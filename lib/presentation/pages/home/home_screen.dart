@@ -35,26 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: context.texts.headlineMedium,
                   ),
                 ),
-                gap12,
-                GestureDetector(
-                  onTap: () => context.push(Routes.sos),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 4,
-                      horizontal: 12,
-                    ),
-                    decoration: BoxDecoration(
-                      color: context.colors.error,
-                      borderRadius: circ20,
-                    ),
-                    child: Text(
-                      LocaleData.sos.getString(context),
-                      style: context.texts.labelMedium!.copyWith(
-                        color: context.colors.onError,
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
             gap24,

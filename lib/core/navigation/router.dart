@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
+import 'package:tinnitus/data/models/recom.dart';
 import 'package:tinnitus/presentation/pages/chat/chat_screen.dart';
 import 'package:tinnitus/presentation/pages/filter/filter_screen.dart';
 import 'package:tinnitus/presentation/pages/home/home_screen.dart';
+import 'package:tinnitus/presentation/pages/home/recommendation_detail_screen.dart';
 import 'package:tinnitus/presentation/pages/main/main_screen.dart';
 import 'package:tinnitus/presentation/pages/onboarding/onboarding_screen.dart';
 import 'package:tinnitus/presentation/pages/profile/profile_screen.dart';
@@ -71,6 +73,13 @@ GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
       builder: (context, state) {
         final isInitialOnboarding = state.extra as bool? ?? true;
         return OnboardingScreen(isInitialOnboarding: isInitialOnboarding);
+      },
+    ),
+    GoRoute(
+      path: Routes.recomDetail,
+      builder: (context, state) {
+        final recom = state.extra as Recommendation;
+        return RecommendationDetailScreen(recom: recom);
       },
     ),
   ],

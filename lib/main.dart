@@ -12,5 +12,6 @@ Future<void> main() async {
   final userController = Get.put(UserController());
   await recomController.initilize();
   await userController.initilize();
+
   runApp(const TinnitusApp());
 }

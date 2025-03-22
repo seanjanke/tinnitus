@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/models/recom.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
@@ -11,49 +12,52 @@ class RecommendationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: padding12,
-      decoration: BoxDecoration(
-        color: context.colors.surface,
-        borderRadius: circ24,
-      ),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 56,
-            height: 56,
-            child: Center(
-              child: FaIcon(
-                recommendation.icon,
-                color: recommendation.iconColor,
-                size: 32,
+    return GestureDetector(
+      onTap: () => context.push(Routes.recomDetail, extra: recommendation),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: padding12,
+        decoration: BoxDecoration(
+          color: context.colors.surface,
+          borderRadius: circ24,
+        ),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 56,
+              height: 56,
+              child: Center(
+                child: FaIcon(
+                  recommendation.icon,
+                  color: recommendation.iconColor,
+                  size: 32,
+                ),
               ),
             ),
-          ),
-          gap16,
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  recommendation.title.getString(context),
-                  style: context.texts.labelMedium,
-                ),
-                gap4,
-                Text(
-                  recommendation.description.getString(context),
-                  style: context.texts.bodyMedium!.copyWith(
-                    color: context.colors.surfaceContainerHigh,
+            gap16,
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    recommendation.title.getString(context),
+                    style: context.texts.labelMedium,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                ),
-              ],
+                  gap4,
+                  Text(
+                    recommendation.description.getString(context),
+                    style: context.texts.bodyMedium!.copyWith(
+                      color: context.colors.surfaceContainerHigh,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

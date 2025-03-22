@@ -105,6 +105,7 @@ mixin LocaleData {
   static const severityLevel2Description = 'severityLevel2Description';
   static const severityLevel3Description = 'severityLevel3Description';
   static const severityLevel4Description = 'severityLevel4Description';
+  static const testAgain = 'testAgain';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -234,6 +235,7 @@ mixin LocaleData {
     severityLevel4Description:
         'Your tinnitus is having a major impact on your well-being - comprehensive specialist care is urgently recommended.',
     yourProfile: 'Your Profile',
+    testAgain: 'Test Again',
   };
 
   static const Map<String, dynamic> de = {
@@ -273,47 +275,47 @@ mixin LocaleData {
     scalarmid: 'Teilweise',
     scalarhigh: 'Stimmt',
     description1:
-        'Verbessert das Hörvermögen von Patienten mit Hörverlust und kann die Tinnituswahrnehmung durch Verstärkung der Umgebungsgeräusche verringern.',
+        'Verbessert das Hörvermögen von Patienten mit Hörverlust und trägt gleichzeitig dazu bei, die Lebensqualität zu steigern.\n\nDurch die gezielte Verstärkung von Umgebungsgeräuschen wird die Tinnituswahrnehmung reduziert, da das Gehirn mit externen akustischen Reizen beschäftigt ist.\n\nDiese Form der audiologischen Unterstützung kann helfen, die belastenden Auswirkungen von Tinnitus zu mindern und den Betroffenen ein natürlicheres Hörerlebnis zu ermöglichen.',
     description2:
-        'Kann die Tinnituswahrnehmung bei Personen mit schwerem bis hochgradigem beidseitigem sensorineuralem Hörverlust deutlich verringern.',
+        'Reduziert die Tinnituswahrnehmung signifikant, insbesondere bei Personen mit schwerem bis hochgradigem sensorineuralem Hörverlust auf beiden Ohren.\n\nDiese Methode zielt darauf ab, das bestehende Hörvermögen zu optimieren, indem sie nicht nur das Sprachverstehen verbessert, sondern auch das störende Tinnitusgeräusch überlagert.\n\nDies führt langfristig zu einer besseren Alltagsbewältigung und einer spürbaren Entlastung im Umgang mit Tinnitus.',
     description3:
-        'Strukturierte Ausbildung zur Verbesserung des Verständnisses von Tinnitus und zur Verringerung des Leidensdrucks; grundlegender Bestandteil des Tinnitus-Managements.',
+        'Bietet eine strukturierte Ausbildung zur Verbesserung des Verständnisses von Tinnitus und zu einem umfassenderen Umgang mit der Belastung, die durch das ständige Ohrgeräusch entsteht.\n\nDiese Schulung vermittelt grundlegende Kenntnisse über die Ursachen, Mechanismen und Behandlungsmöglichkeiten von Tinnitus und gibt Betroffenen konkrete Werkzeuge an die Hand, um den psychischen Leidensdruck langfristig zu verringern.\n\nEin essenzieller Bestandteil des modernen Tinnitus-Managements, der auf fundierter wissenschaftlicher Basis entwickelt wurde.',
     description4:
-        'Die am besten belegte psychologische Therapie für Tinnitus; verringert den Leidensdruck und verbessert die Bewältigung.',
+        'Die kognitive Verhaltenstherapie (CBT) ist die am besten untersuchte und belegte psychologische Therapieform für Tinnitus und gilt als Goldstandard in der Behandlung.\n\nSie hilft dabei, negative Gedankenmuster, die durch das belastende Ohrgeräusch ausgelöst werden, zu erkennen und schrittweise zu verändern.\n\nDiese Therapieform reduziert nicht nur den empfundenen Leidensdruck, sondern verbessert auch die allgemeine Bewältigungsstrategie im Alltag und fördert einen entspannteren Umgang mit Tinnitus.',
     description5:
-        'Kombiniert direktive Beratung mit Geräuschanreicherung zur Gewöhnung; langfristige Verhaltensintervention. ',
+        'Kombiniert eine direktive Beratung mit einer gezielten Geräuschanreicherung, um die Gewöhnung an den Tinnitus (Habituation) zu fördern.\n\nDiese langfristige Verhaltensintervention basiert auf der Idee, das Gehirn durch kontinuierliche akustische Stimulation an die Tinnitusgeräusche zu gewöhnen, sodass diese weniger störend wahrgenommen werden.\n\nDie Methode hat sich als wirksamer Ansatz erwiesen, um die Wahrnehmung des Tinnitus zu reduzieren und das allgemeine Wohlbefinden der Betroffenen nachhaltig zu steigern.',
     description6:
-        'Eine auf Achtsamkeit basierende Verhaltenstherapie, die nachweislich den Tinnitus-Belastungsgrad bei einigen Personen reduziert.',
+        'Eine auf Achtsamkeit basierende Verhaltenstherapie, die gezielt darauf abzielt, den Tinnitus-Belastungsgrad bei einigen Personen zu reduzieren.\n\nDurch das bewusste Wahrnehmen und Akzeptieren des Tinnitusgeräusches lernen die Betroffenen, ihre emotionale Reaktion auf das störende Geräusch zu verändern und so den empfundenen Leidensdruck zu verringern.\n\nDiese Methode unterstützt dabei, den Fokus weg vom Tinnitus zu lenken und mehr Gelassenheit im Alltag zu entwickeln, was langfristig zu einer besseren Lebensqualität beitragen kann.',
     description7:
-        'Musikbasierte Interventionen können Entspannung und Ablenkung unterstützen, aber es gibt keine überzeugenden Beweise für eine eigenständige Therapie.',
+        'Musikbasierte Interventionen können hilfreich sein, um Entspannung, Ablenkung und eine angenehme Atmosphäre zu fördern.\n\nDie beruhigende Wirkung von Musik kann die Stresswahrnehmung reduzieren und somit indirekt zu einer Linderung der Tinnitusbelastung beitragen.\n\nAllerdings gibt es bislang keine überzeugenden wissenschaftlichen Beweise dafür, dass solche Interventionen als eigenständige Therapie zur dauerhaften Behandlung von Tinnitus wirksam sind.',
     description8:
-        'Verwendung von externen Klängen (z. B. weißes Rauschen), um den Tinnituskontrast zu verringern und die Gewöhnung zu fördern.',
+        'Die Verwendung von externen Klängen, wie beispielsweise weißem Rauschen oder natürlichen Geräuschen, kann dazu beitragen, den Kontrast zwischen dem Tinnitusgeräusch und der Umgebung zu verringern.\n\nDiese Geräusche dienen dazu, die Aufmerksamkeit des Gehirns von den störenden Ohrgeräuschen abzulenken und die Gewöhnung (Habituation) an den Tinnitus zu fördern.\n\nDiese Methode wird häufig als Teil eines umfassenden Tinnitus-Management-Plans eingesetzt und kann langfristig dazu beitragen, die Belastung durch den Tinnitus zu reduzieren.',
     description9:
-        'Wird zur Behandlung von komorbiden Depressionen oder Ängsten eingesetzt; nicht direkt wirksam bei Tinnitus-Symptomen.',
+        'Bestimmte Medikamente werden zur Behandlung von komorbiden psychischen Erkrankungen wie Depressionen oder Angststörungen eingesetzt, die häufig bei Tinnitus-Patienten auftreten.\n\nObwohl diese Medikamente nicht direkt auf die Tinnitus-Symptome wirken, können sie das allgemeine Wohlbefinden verbessern und den Umgang mit dem Tinnitus erleichtern, indem sie die psychische Belastung verringern.\n\nEs ist jedoch wichtig zu beachten, dass Medikamente allein meist nicht ausreichen, um den Tinnitus vollständig zu bewältigen, und daher oft mit anderen Therapieansätzen kombiniert werden.',
     description10:
-        'Kann akuten Stress verringern oder kurzfristig den Schlaf fördern; aufgrund des Abhängigkeitsrisikos nicht für den Langzeitgebrauch empfohlen.',
+        'Bestimmte Entspannungs- oder Beruhigungsmittel können kurzfristig dazu beitragen, akuten Stress zu reduzieren oder den Schlaf zu fördern, was für viele Tinnitus-Betroffene eine wichtige Erleichterung sein kann.\n\nDa jedoch bei längerem Gebrauch ein Risiko für Abhängigkeit besteht, wird der Einsatz dieser Medikamente nur für kurzfristige Anwendungen und in akuten Belastungssituationen empfohlen.\n\nLangfristige Therapieansätze zur Stressbewältigung, wie beispielsweise Entspannungsübungen oder Achtsamkeitstechniken, sind in der Regel eine sicherere und nachhaltigere Alternative.',
     description11:
-        'Kann die Schlafqualität bei Tinnitus-Patienten verbessern; begrenzte Beweise für eine direkte Linderung des Tinnitus.',
+        'Ein verbesserter Schlaf kann dazu beitragen, die allgemeine Lebensqualität von Tinnitus-Patienten zu steigern, da Schlafprobleme häufig zu den belastendsten Begleiterscheinungen des Tinnitus gehören.\n\nBestimmte Maßnahmen oder Interventionen, wie zum Beispiel kognitive Verhaltenstherapie oder Entspannungstechniken, können dabei helfen, die Schlafqualität zu verbessern und damit auch indirekt den Leidensdruck durch den Tinnitus zu verringern.\n\nObwohl es begrenzte wissenschaftliche Beweise für eine direkte Linderung des Tinnitus durch diese Maßnahmen gibt, berichten viele Patienten über positive Effekte auf ihr Wohlbefinden und ihren Schlafrhythmus.',
     description12:
-        'Derzeit gibt es keine verlässlichen Beweise und bei einigen Personen können sich die Symptome verschlimmern.',
+        'Derzeit fehlen verlässliche wissenschaftliche Beweise, die den Nutzen bestimmter experimenteller Ansätze oder Behandlungsmethoden für die direkte Linderung von Tinnitus belegen.\n\nEs gibt sogar Berichte darüber, dass sich die Symptome bei einigen Personen nach der Anwendung solcher experimentellen Ansätze verschlimmern können, weshalb diese Verfahren mit Vorsicht betrachtet werden sollten.\n\nEine sorgfältige Risiko-Nutzen-Abwägung und eine individuelle Beratung durch Fachpersonal sind daher entscheidend, bevor experimentelle Therapien in Betracht gezogen werden.',
     description13:
-        'Verhaltensstrategien zur Verbesserung der Schlafhygiene; Erstklassige Empfehlung für Tinnitus-bedingte Schlaflosigkeit.',
+        'Verhaltensstrategien zur Verbesserung der Schlafhygiene gelten als eine der wirksamsten Maßnahmen zur Behandlung von Tinnitus-bedingter Schlaflosigkeit.\n\nDiese Strategien umfassen unter anderem das Einhalten regelmäßiger Schlafenszeiten, den Verzicht auf Koffein oder Bildschirmzeit vor dem Schlafengehen sowie die Gestaltung einer ruhigen und angenehmen Schlafumgebung.\n\nDa Schlafprobleme bei vielen Tinnitus-Patienten den Leidensdruck erheblich verstärken, stellen solche schlaffördernden Verhaltensänderungen eine erstklassige Empfehlung dar und können langfristig zu einer spürbaren Entlastung beitragen.',
     description14:
-        'Experimentelle psychedelische Substanz, die erforscht wird; nicht für den klinischen Einsatz in der Tinnitus-Behandlung zugelassen.',
+        'Eine experimentelle psychedelische Substanz, die derzeit erforscht wird, um mögliche Effekte auf die Tinnitus-Wahrnehmung zu untersuchen.\n\nObwohl einige Studien auf ein potenzielles therapeutisches Potenzial psychedelischer Substanzen bei der Behandlung bestimmter psychischer Erkrankungen hinweisen, ist der klinische Einsatz in der Tinnitus-Behandlung bisher weder zugelassen noch ausreichend untersucht.\n\nBis belastbare wissenschaftliche Erkenntnisse vorliegen, bleibt der Einsatz dieser Substanz experimentell und sollte nur im Rahmen streng kontrollierter klinischer Studien erfolgen.',
     description15:
-        'Achtsamkeitsmeditation, die sich auf Körperwahrnehmung und emotionales Gleichgewicht konzentriert; unterstützt die Stressregulierung.',
+        'Achtsamkeitsmeditation ist eine Praxis, die darauf abzielt, die Körperwahrnehmung zu verbessern, das emotionale Gleichgewicht zu fördern und die Stressregulation zu unterstützen.\n\nFür Tinnitus-Betroffene kann diese Form der Meditation eine wirksame Möglichkeit sein, um den empfundenen Stress zu reduzieren, die Aufmerksamkeit auf den gegenwärtigen Moment zu lenken und die emotionale Reaktion auf das Tinnitusgeräusch zu verändern.\n\nLangfristig können regelmäßige Achtsamkeitsübungen dazu beitragen, den Leidensdruck zu verringern und die allgemeine Lebensqualität zu verbessern, insbesondere wenn sie in einen umfassenden Therapieansatz integriert werden.',
     description16:
-        'Wachsende Beweise unterstützen Achtsamkeit zur Verringerung von tinnitusbedingtem Stress und Reaktivität. ',
+        'Wachsende wissenschaftliche Beweise zeigen, dass Achtsamkeitsübungen effektiv zur Verringerung von tinnitusbedingtem Stress und Reaktivität beitragen können.\n\nDurch die Fokussierung auf den gegenwärtigen Moment und die Akzeptanz des Tinnitusgeräusches, ohne es zu bewerten oder zu bekämpfen, lernen Betroffene, ihre emotionale Reaktion auf das Geräusch zu regulieren.\n\nLangfristig kann eine regelmäßige Achtsamkeitspraxis helfen, die Wahrnehmung des Tinnitus zu verändern und den Leidensdruck spürbar zu verringern.',
     description17:
-        'Konzentriert sich auf die Verbindung zwischen Darm und Gehirn; kann die psychische Gesundheit unterstützen, obwohl die Beweise für Tinnitus begrenzt sind.',
+        'Dieser Ansatz konzentriert sich auf die enge Verbindung zwischen Darm und Gehirn und untersucht, wie die Darmgesundheit die psychische Gesundheit beeinflussen kann.\n\nObwohl es Hinweise darauf gibt, dass eine ausgewogene Darmflora positive Effekte auf die mentale Gesundheit haben könnte, bleiben die Beweise für direkte Auswirkungen auf Tinnitus derzeit begrenzt.\n\nTrotzdem könnte die Unterstützung der Darmgesundheit, etwa durch eine gesunde Ernährung oder den gezielten Einsatz von Probiotika, ein ergänzender Ansatz sein, um das allgemeine Wohlbefinden zu fördern.',
     description18:
-        'Keine starken Beweise unterstützen den Verzicht auf Milchprodukte bei Tinnitus; Versuch nur bei Verdacht auf Laktoseempfindlichkeit. ',
+        'Es gibt keine starken wissenschaftlichen Beweise dafür, dass der Verzicht auf Milchprodukte einen direkten Einfluss auf die Tinnitus-Symptome hat.\n\nIn einigen Fällen kann jedoch ein Versuch sinnvoll sein, insbesondere wenn ein Verdacht auf eine Laktoseempfindlichkeit oder eine Unverträglichkeit gegenüber bestimmten Milchproteinen besteht.\n\nEine individuell abgestimmte Ernährungsberatung könnte hilfreich sein, um mögliche Trigger auszuschließen und das allgemeine Wohlbefinden zu steigern, auch wenn ein kausaler Zusammenhang mit Tinnitus nicht gesichert ist.',
     description19:
-        'Ganzheitlicher Ansatz, der potenziell zugrundeliegende Probleme untersucht; die Evidenz in der Tinnitusbehandlung ist noch begrenzt.',
+        'Ein ganzheitlicher Ansatz zielt darauf ab, potenziell zugrunde liegende gesundheitliche oder psychische Probleme zu identifizieren, die zur Wahrnehmung des Tinnitus beitragen könnten.\n\nDieser Ansatz umfasst oft eine Kombination aus medizinischen, psychologischen und verhaltensbezogenen Interventionen und setzt auf eine umfassende Betrachtung des Patienten und seiner Lebensweise.\n\nObwohl die Evidenzbasis für eine direkte Wirkung auf Tinnitus derzeit noch begrenzt ist, könnte ein solcher multimodaler Ansatz langfristig zu einer Verbesserung der Lebensqualität führen.',
     description20:
-        'Psychodynamische oder somatische Methoden, um emotionale Auslöser aufzudecken; nicht klinisch validiert für Tinnitus.',
+        'Psychodynamische oder somatische Therapiemethoden konzentrieren sich darauf, unbewusste emotionale Auslöser und körperliche Spannungen aufzudecken, die möglicherweise zur Tinnitus-Wahrnehmung beitragen.\n\nDiese Methoden gehen davon aus, dass ungelöste emotionale Konflikte oder Stressreaktionen eine Rolle bei der Wahrnehmung des Tinnitus spielen könnten.\n\nAllerdings fehlen bislang klinische Validierungen und belastbare Studien, die die Wirksamkeit dieser Ansätze speziell in der Tinnitus-Behandlung belegen.',
     description21:
-        'Eine sensorische Achtsamkeitsübung unter Verwendung von Schokolade; kann Anfängern helfen, sich mit meditativem Bewusstsein zu beschäftigen.',
+        'Diese sensorische Achtsamkeitsübung nutzt Schokolade als Hilfsmittel, um die Aufmerksamkeit auf die gegenwärtige Sinneserfahrung zu lenken.\n\nIndem die Übenden sich bewusst auf den Geschmack, die Textur und den Duft der Schokolade konzentrieren, wird ein meditatives Bewusstsein gefördert, das zu einer tieferen Achtsamkeit führen kann.\n\nDiese Methode kann insbesondere Anfängern helfen, ein erstes Gefühl für Achtsamkeit zu entwickeln und den Fokus von belastenden Gedanken oder Empfindungen, wie dem Tinnitus, abzulenken.',
     recommendation1: 'Hörgeräte',
     recommendation2: 'Cochlea-Implantat',
     recommendation3: 'Tinnitus-Beratung',
@@ -357,5 +359,6 @@ mixin LocaleData {
     severityLevel4Description:
         'Ihr Tinnitus wirkt sich stark auf Ihr Wohlbefinden aus – eine umfassende fachliche Betreuung ist dringend empfehlenswert.',
     yourProfile: 'Dein Profil',
+    testAgain: 'Erneut testen',
   };
 }

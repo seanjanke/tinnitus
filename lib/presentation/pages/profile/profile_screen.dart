@@ -132,7 +132,7 @@ class ProfileScreen extends StatelessWidget {
                   InkWell(
                     onTap: () => context.push(Routes.onboarding, extra: false),
                     child: Text(
-                      'Erneut testen',
+                      LocaleData.testAgain.getString(context),
                       style: context.texts.labelSmall,
                     ),
                   ),

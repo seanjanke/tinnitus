@@ -49,7 +49,7 @@ GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
           routes: [
             GoRoute(
               path: Routes.profile,
-              builder: (context, state) => const ProfileScren(),
+              builder: (context, state) => const ProfileScreen(),
             ),
           ],
         ),
@@ -57,7 +57,7 @@ GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
     ),
     GoRoute(path: Routes.home, builder: (context, state) => HomeScreen()),
     GoRoute(path: Routes.chat, builder: (context, state) => ChatScreen()),
-    GoRoute(path: Routes.profile, builder: (context, state) => ProfileScren()),
+    GoRoute(path: Routes.profile, builder: (context, state) => ProfileScreen()),
     GoRoute(
       path: Routes.settings,
       builder: (context, state) => SettingsScreen(),

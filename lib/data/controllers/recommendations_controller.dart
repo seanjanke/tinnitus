@@ -41,14 +41,13 @@ class RecommendationsController extends GetxController {
   Future<void> saveSeverityToLocalDb(Severity severity) async {
     LocalDBService dbHelper = LocalDBService();
     await dbHelper.insertSeverity(severity);
-    print('Saved Severity: ${severity.answers}');
   }
 
   Future<void> fetchSeverities() async {
     LocalDBService dbHelper = LocalDBService();
     List<Severity> severities = await dbHelper.getSeverities();
-    severities.forEach((severity) {
-      print('Retrieved Severity: ${severity.answers}');
-    });
+    if (severities.isNotEmpty) {
+      userSeverity.value = severities.first;
+    }
   }
 }

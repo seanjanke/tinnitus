@@ -99,7 +99,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         isDense: true,
                         filled: true,
-                        contentPadding: padding12,
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
                         fillColor: context.colors.surface,
                       ),
                     ),

@@ -16,7 +16,7 @@ class SettingsListTile extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
           color: context.colors.surface,
-          borderRadius: circ12,
+          borderRadius: circ20,
         ),
         child: Row(
           children: [

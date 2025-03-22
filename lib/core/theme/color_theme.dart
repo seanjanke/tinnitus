@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final primary = Colors.lightBlue.shade600;
-final surface = Colors.grey.shade100;
+final surface = Color(0xffF1F5F9);
 final neutralLowest = Colors.grey.shade200;
 final neutralLow = Colors.grey.shade300;
 final neutralHigh = Colors.grey.shade400;

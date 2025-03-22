@@ -26,12 +26,12 @@ class LanguageListTile extends StatelessWidget {
         decoration: BoxDecoration(
           color:
               isActive
-                  ? context.colors.primary.wOpacity(0.5)
+                  ? context.colors.primary.wOpacity(0.3)
                   : context.colors.surface,
           borderRadius: circ12,
           border: Border.all(
-            width: 2,
             color: isActive ? context.colors.primary : context.colors.surface,
+            width: 2.5,
           ),
         ),
         child: Row(
@@ -45,10 +45,6 @@ class LanguageListTile extends StatelessWidget {
                 ],
               ),
             ),
-            if (isActive)
-              Icon(Icons.check_circle, color: context.colors.primary)
-            else
-              const SizedBox.shrink(),
           ],
         ),
       ),

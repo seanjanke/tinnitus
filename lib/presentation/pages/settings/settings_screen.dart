@@ -20,10 +20,6 @@ class SettingsScreen extends StatelessWidget {
               title: LocaleData.language.getString(context),
               onTap: () => context.push(Routes.language),
             ),
-            SettingsListTile(
-              title: LocaleData.sosPosition.getString(context),
-              onTap: () {},
-            ),
           ],
         ),
       ),

@@ -94,6 +94,16 @@ mixin LocaleData {
   static const next = 'next';
   static const forYou = 'forYou';
   static const goodMorning = 'goodMorning';
+  static const personalInformation = 'personalInformation';
+  static const personalInformationDescription =
+      'personalInformationDescription';
+  static const preferences = 'preferences';
+  static const preferencesDescription = 'preferencesDescription';
+  static const severityLevel = 'severityLevel';
+  static const severityLevel1Description = 'severityLevel1Description';
+  static const severityLevel2Description = 'severityLevel2Description';
+  static const severityLevel3Description = 'severityLevel3Description';
+  static const severityLevel4Description = 'severityLevel4Description';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -209,6 +219,19 @@ mixin LocaleData {
     next: 'Next',
     forYou: 'Recommended For You',
     goodMorning: 'Good Morning',
+    personalInformation: 'Personal Information',
+    personalInformationDescription: 'Name, age, gender, disabilities, etc.',
+    preferences: 'Preferences',
+    preferencesDescription: 'Preferences Description',
+    severityLevel: 'Severity Level',
+    severityLevel1Description:
+        'Your tinnitus currently only seems to be a minor psychological burden and hardly affects your everyday life.',
+    severityLevel2Description:
+        'Your tinnitus is causing noticeable but still moderate stress - further clarification or targeted support may be helpful.',
+    severityLevel3Description:
+        'The tinnitus is a significant psychological burden for you - therapeutic measures should be considered.',
+    severityLevel4Description:
+        'Your tinnitus is having a major impact on your well-being - comprehensive specialist care is urgently recommended.',
   };
 
   static const Map<String, dynamic> de = {
@@ -313,9 +336,23 @@ mixin LocaleData {
     sendMessage: 'Nachricht senden',
     chatWithAI: 'Mit KI chatten',
     back: 'Zurück',
-    skip: 'Überspringen',
+    skip: 'Übersp.',
     next: 'Weiter',
     forYou: 'Für dich empfohlen',
     goodMorning: 'Guten Morgen',
+    personalInformation: 'Persönliche Informationen',
+    personalInformationDescription:
+        'Name, Alter, Geschlecht, Beeinträchtigungen, usw.',
+    preferences: 'Präferenzen',
+    preferencesDescription: 'Präferenzen Beschreibung',
+    severityLevel: 'Schweregrad der Belastung',
+    severityLevel1Description:
+        'Ihr Tinnitus scheint aktuell nur eine geringe psychische Belastung darzustellen und beeinträchtigt Ihren Alltag kaum.',
+    severityLevel2Description:
+        'Ihr Tinnitus verursacht eine spürbare, aber noch moderate Belastung – eine weitere Abklärung oder gezielte Unterstützung kann hilfreich sein.',
+    severityLevel3Description:
+        'Der Tinnitus stellt eine deutliche psychische Belastung für Sie dar – therapeutische Maßnahmen sollten in Betracht gezogen werden.',
+    severityLevel4Description:
+        'Ihr Tinnitus wirkt sich stark auf Ihr Wohlbefinden aus – eine umfassende fachliche Betreuung ist dringend empfehlenswert.',
   };
 }

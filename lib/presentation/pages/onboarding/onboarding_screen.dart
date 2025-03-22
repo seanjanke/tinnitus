@@ -96,11 +96,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     child: Text(
                       LocaleData.back.getString(context),
-                      style: context.texts.labelSmall,
+                      style: context.texts.labelSmall!.copyWith(fontSize: 14),
                     ),
                   ),
                 ),
-                gap24,
+                gap20,
                 Expanded(
                   child: LinearProgressIndicator(
                     borderRadius: circ12,
@@ -110,7 +110,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     valueColor: AlwaysStoppedAnimation(context.colors.primary),
                   ),
                 ),
-                gap24,
+                gap20,
                 GestureDetector(
                   onTap: finishQuiz,
                   child: Container(
@@ -124,7 +124,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     child: Text(
                       LocaleData.skip.getString(context),
-                      style: context.texts.labelSmall,
+                      style: context.texts.labelSmall!.copyWith(fontSize: 14),
                     ),
                   ),
                 ),

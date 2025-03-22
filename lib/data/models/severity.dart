@@ -2,6 +2,39 @@ import 'package:tinnitus/core/localization/locales.dart';
 
 enum AnswerValue { trueValue, partiallyTrue, notTrue }
 
+enum SeverityLevel {
+  one(
+    displayName: '1',
+    level: 1,
+    description: LocaleData.severityLevel1Description,
+  ),
+  two(
+    displayName: '2',
+    level: 2,
+    description: LocaleData.severityLevel2Description,
+  ),
+  three(
+    displayName: '3',
+    level: 3,
+    description: LocaleData.severityLevel3Description,
+  ),
+  four(
+    displayName: '4',
+    level: 4,
+    description: LocaleData.severityLevel4Description,
+  );
+
+  final String displayName;
+  final int level;
+  final String description;
+
+  const SeverityLevel({
+    required this.displayName,
+    required this.level,
+    required this.description,
+  });
+}
+
 extension AnswerValueExtension on AnswerValue {
   String get displayName {
     switch (this) {
@@ -18,13 +51,15 @@ extension AnswerValueExtension on AnswerValue {
 class Severity {
   int id;
   List<AnswerValue> answers;
+  SeverityLevel level;
 
-  Severity({required this.id, required this.answers});
+  Severity({required this.id, required this.answers, required this.level});
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'answers': answers.map((e) => e.index).toList().toString(),
+      'level': level.index,
     };
   }
 
@@ -32,6 +67,7 @@ class Severity {
     return Severity(
       id: 0,
       answers: List.generate(questionCount, (_) => AnswerValue.partiallyTrue),
+      level: SeverityLevel.one,
     );
   }
 
@@ -45,6 +81,7 @@ class Severity {
     return Severity(
       id: map['id'],
       answers: answersIndexes.map((i) => AnswerValue.values[i]).toList(),
+      level: SeverityLevel.values[map['level'] ?? 0],
     );
   }
 }

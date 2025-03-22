@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
@@ -29,11 +30,11 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
           leading: IconButton(
             onPressed: onTap,
             style: const ButtonStyle(splashFactory: NoSplash.splashFactory),
-            icon: const Icon(Icons.arrow_back_rounded),
+            icon: const FaIcon(FontAwesomeIcons.arrowLeft, size: 22),
           ),
           title: Text(
             titleIsLocalized ?? true ? title.getString(context) : title,
-            style: context.texts.bodyLarge,
+            style: context.texts.labelLarge,
           ),
           actions: actions,
         ),

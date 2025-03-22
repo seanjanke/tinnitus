@@ -6,7 +6,8 @@ import 'package:tinnitus/data/sources/local_db.dart';
 
 class UserController extends GetxController {
   RxBool hasCompletedOnboarding = false.obs;
-  Rx<Severity> userSeverity = Severity(id: 0, answers: []).obs;
+  Rx<Severity> userSeverity =
+      Severity(id: 0, answers: [], level: SeverityLevel.one).obs;
   Rx<AppUser> currentUser = AppUser.empty().obs;
 
   Future<void> initilize() async {

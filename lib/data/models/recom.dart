@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/data/models/recom_category.dart';
 
 class Recommendation {
@@ -22,7 +23,7 @@ const allRecommendations = <Recommendation>[
   Recommendation(
     id: 0,
     category: RecommendationCategory.hearningProblem,
-    title: 'Chocolate Meditation',
+    title: LocaleData.chocolateMeditation,
     description:
         'Eat a piece of chocolate and focus on the taste and texture. Start your meditation and go into a deep state of relaxation.',
     icon: HugeIcons.strokeRoundedChocolate,

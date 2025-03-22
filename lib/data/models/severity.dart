@@ -1,5 +1,18 @@
 enum AnswerValue { trueValue, partiallyTrue, notTrue }
 
+extension AnswerValueExtension on AnswerValue {
+  String get displayName {
+    switch (this) {
+      case AnswerValue.trueValue:
+        return "True";
+      case AnswerValue.partiallyTrue:
+        return "Partially True";
+      case AnswerValue.notTrue:
+        return "Not True";
+    }
+  }
+}
+
 class Severity {
   int id;
   List<AnswerValue> answers;

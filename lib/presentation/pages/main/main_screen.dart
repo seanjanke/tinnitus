@@ -30,7 +30,7 @@ class MainScreen extends StatelessWidget {
               items: [
                 BottomNavigationBarItem(
                   icon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedIrisScan,
+                    icon: HugeIcons.strokeRoundedHome01,
                     color:
                         navigationShell.currentIndex == 0
                             ? context.bottomNavTheme.selectedItemColor!
@@ -42,7 +42,7 @@ class MainScreen extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                   icon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedClock01,
+                    icon: HugeIcons.strokeRoundedChatting01,
                     color:
                         navigationShell.currentIndex == 1
                             ? context.bottomNavTheme.selectedItemColor!
@@ -54,7 +54,7 @@ class MainScreen extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                   icon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedSettings01,
+                    icon: HugeIcons.strokeRoundedUserCircle,
                     color:
                         navigationShell.currentIndex == 2
                             ? context.bottomNavTheme.selectedItemColor!

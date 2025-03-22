@@ -10,11 +10,14 @@ import 'package:tinnitus/presentation/pages/onboarding/onboarding_screen.dart';
 import 'package:tinnitus/presentation/pages/profile/profile_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/pages/language_screen.dart';
 import 'package:tinnitus/presentation/pages/settings/settings_screen.dart';
+import 'package:tinnitus/presentation/pages/welcome/welcome_screens.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
-  initialLocation: hasCompletedOnboarding ? Routes.home : Routes.onboarding,
+  initialLocation:
+      Routes
+          .welcome, //hasCompletedOnboarding ? Routes.home : Routes.onboarding,
   routes: [
     StatefulShellRoute.indexedStack(
       pageBuilder:
@@ -81,6 +84,10 @@ GoRouter router({required bool hasCompletedOnboarding}) => GoRouter(
         final recom = state.extra as Recommendation;
         return RecommendationDetailScreen(recom: recom);
       },
+    ),
+    GoRoute(
+      path: Routes.welcome,
+      builder: (context, state) => WelcomeScreens(),
     ),
   ],
 );

@@ -10,4 +10,5 @@ class Routes {
   static const String filter = '/filter';
   static const String onboarding = '/onboarding';
   static const String recomDetail = '/recomDetail';
+  static const String welcome = '/welcome';
 }

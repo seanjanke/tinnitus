@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
 import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/controllers/recommendations_controller.dart';
-import 'package:tinnitus/data/models/recom_category.dart';
 import 'package:tinnitus/presentation/pages/home/components/recommendation_tile.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
@@ -18,6 +18,34 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final searchInputController = TextEditingController();
   final recommendationsController = Get.find<RecommendationsController>();
+
+  Widget buildForYou() {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            LocaleData.forYou.getString(context),
+            style: context.texts.labelLarge,
+          ),
+          gap12,
+          Expanded(
+            child: Obx(
+              () => ListView.builder(
+                itemCount: recommendationsController.userRecommendations.length,
+                itemBuilder: (context, index) {
+                  final recommendation =
+                      recommendationsController.userRecommendations[index];
+
+                  return RecommendationTile(recommendation: recommendation);
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,40 +65,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            gap24,
+            gap8,
             IntrinsicHeight(
               child: Row(
                 children: [
                   Expanded(
                     child: TextField(
                       controller: searchInputController,
-                      style: context.texts.bodyMedium,
+                      style: context.texts.bodyLarge,
                       cursorColor: context.colors.onSurface,
                       decoration: InputDecoration(
                         hintText: LocaleData.search.getString(context),
-                        hintStyle: context.texts.bodyMedium!.copyWith(
+                        hintStyle: context.texts.bodyLarge!.copyWith(
                           color: context.colors.surfaceContainerHighest,
                         ),
                         border: OutlineInputBorder(
-                          borderRadius: circ16,
-                          borderSide: BorderSide(
-                            color: context.colors.surfaceContainerLowest,
-                            width: 1.5,
-                          ),
+                          borderRadius: circ60,
+                          borderSide: BorderSide.none,
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: circ16,
-                          borderSide: BorderSide(
-                            color: context.colors.surfaceContainerLowest,
-                            width: 1.5,
-                          ),
+                          borderRadius: circ60,
+                          borderSide: BorderSide.none,
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: circ16,
-                          borderSide: BorderSide(
-                            color: context.colors.surfaceContainerLowest,
-                            width: 1.5,
-                          ),
+                          borderRadius: circ60,
+                          borderSide: BorderSide.none,
                         ),
                         isDense: true,
                         filled: true,
@@ -88,15 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: padding8,
                         decoration: BoxDecoration(
                           color: context.colors.surface,
-                          borderRadius: circ16,
-                          border: Border.all(
-                            color: context.colors.surfaceContainerLowest,
-                            width: 1.5,
-                          ),
+                          shape: BoxShape.circle,
                         ),
                         child: Center(
-                          child: Icon(
-                            Icons.filter_list,
+                          child: FaIcon(
+                            FontAwesomeIcons.filter,
                             size: 20,
                             color: context.colors.surfaceContainerHighest,
                           ),
@@ -107,41 +122,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            gap24,
-            Wrap(
-              spacing: 12,
-              runSpacing: 10,
-              children:
-                  RecommendationCategory.values.map((category) {
-                    return Container(
-                      padding: padding8,
-                      decoration: BoxDecoration(
-                        color: context.colors.surface,
-                        borderRadius: circ20,
-                        border: Border.all(
-                          color: context.colors.surfaceContainerLowest,
-                          width: 1,
-                        ),
-                      ),
-                      child: Text(category.displayName),
-                    );
-                  }).toList(),
-            ),
             gap32,
-            Expanded(
-              child: Obx(
-                () => ListView.builder(
-                  itemCount:
-                      recommendationsController.userRecommendations.length,
-                  itemBuilder: (context, index) {
-                    final recommendation =
-                        recommendationsController.userRecommendations[index];
-
-                    return RecommendationTile(recommendation: recommendation);
-                  },
-                ),
-              ),
-            ),
+            // Wrap(
+            //   spacing: 12,
+            //   runSpacing: 10,
+            //   children:
+            //       RecommendationCategory.values.map((category) {
+            //         return Container(
+            //           padding: padding8,
+            //           decoration: BoxDecoration(
+            //             color: context.colors.surface,
+            //             borderRadius: circ20,
+            //             border: Border.all(
+            //               color: context.colors.surfaceContainerLowest,
+            //               width: 1,
+            //             ),
+            //           ),
+            //           child: Text(category.displayName),
+            //         );
+            //       }).toList(),
+            // ),
+            buildForYou(),
           ],
         ),
       ),

@@ -16,7 +16,7 @@ class RecommendationTile extends StatelessWidget {
       padding: padding12,
       decoration: BoxDecoration(
         color: context.colors.surface,
-        borderRadius: circ16,
+        borderRadius: circ24,
       ),
       child: Row(
         children: [

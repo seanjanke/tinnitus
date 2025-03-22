@@ -99,7 +99,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
           Padding(
-            padding: padding12,
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             child: Row(
               children: [
                 Expanded(
@@ -109,18 +109,20 @@ class _ChatScreenState extends State<ChatScreen> {
                     minLines: 1,
                     maxLines: 5,
                     cursorColor: context.colors.onSurface,
+                    cursorWidth: 2.5,
+                    cursorHeight: 24,
                     onChanged: (value) {
                       setState(() => isEmpty = value.isEmpty);
                     },
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: context.colors.surface,
-                      labelText: LocaleData.sendMessage.getString(context),
-                      labelStyle: context.texts.bodyMedium!.copyWith(
+                      hintText: LocaleData.sendMessage.getString(context),
+                      hintStyle: context.texts.bodyMedium!.copyWith(
                         color: context.colors.surfaceContainerHighest,
                       ),
                       contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 12,
+                        horizontal: 16,
                         vertical: 8,
                       ),
                       floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -137,10 +139,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 400),
                     curve: Curves.easeIn,
-                    padding:
-                        messageController.text.isNotEmpty
-                            ? const EdgeInsets.all(12)
-                            : const EdgeInsets.all(12),
+                    padding: padding8,
                     decoration: BoxDecoration(
                       color:
                           messageController.text.isNotEmpty
@@ -157,7 +156,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             messageController.text.isNotEmpty
                                 ? context.colors.primary
                                 : context.colors.surfaceContainerHigh,
-                        size: messageController.text.isNotEmpty ? 28 : 28,
+                        size: 30,
                       ),
                     ),
                   ),

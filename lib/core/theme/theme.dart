@@ -24,7 +24,7 @@ var bottomNavBarTheme = BottomNavigationBarThemeData(
   selectedIconTheme: const IconThemeData(size: 20),
   unselectedIconTheme: const IconThemeData(size: 20),
   selectedItemColor: colorScheme.primary,
-  unselectedItemColor: colorScheme.surfaceContainerHighest,
+  unselectedItemColor: colorScheme.surfaceContainerHigh,
 );
 
 const gap4 = Gap(4);
@@ -40,6 +40,7 @@ var circ8 = BorderRadius.circular(8);
 var circ12 = BorderRadius.circular(12);
 var circ16 = BorderRadius.circular(16);
 var circ20 = BorderRadius.circular(20);
+var circ24 = BorderRadius.circular(24);
 var circ60 = BorderRadius.circular(60);
 
 const padding4 = EdgeInsets.all(4);

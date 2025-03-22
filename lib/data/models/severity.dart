@@ -2,6 +2,19 @@ import 'package:tinnitus/core/localization/locales.dart';
 
 enum AnswerValue { trueValue, partiallyTrue, notTrue }
 
+extension AnswerValueIntExtension on AnswerValue {
+  int get toInt {
+    switch (this) {
+      case AnswerValue.trueValue:
+        return 2;
+      case AnswerValue.partiallyTrue:
+        return 1;
+      case AnswerValue.notTrue:
+        return 0;
+    }
+  }
+}
+
 enum SeverityLevel {
   one(
     displayName: '1',

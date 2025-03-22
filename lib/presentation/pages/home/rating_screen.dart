@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_confetti/flutter_confetti.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:tinnitus/core/localization/locales.dart';
@@ -216,6 +217,16 @@ class _RatingScreenState extends State<RatingScreen> {
                   rating: selectedValue,
                 );
                 if (context.mounted) {
+                  if (selectedValue == 5) {
+                    Confetti.launch(
+                      context,
+                      options: const ConfettiOptions(
+                        particleCount: 100,
+                        spread: 70,
+                        y: 0.8,
+                      ),
+                    );
+                  }
                   context.pop();
                   context.pop();
                 }

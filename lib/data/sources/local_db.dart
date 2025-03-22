@@ -19,14 +19,20 @@ class LocalDBService {
     String path = join(await getDatabasesPath(), 'severity.db');
     return await openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: (db, version) {
         db.execute('''
           CREATE TABLE severity (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            answers TEXT
+            answers TEXT,
+            level INTEGER
           )
         ''');
+      },
+      onUpgrade: (db, oldVersion, newVersion) {
+        if (oldVersion == 1) {
+          db.execute('ALTER TABLE severity ADD COLUMN level INTEGER');
+        }
       },
     );
   }

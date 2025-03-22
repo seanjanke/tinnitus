@@ -39,11 +39,34 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     LocaleData.question12,
   ];
 
+  SeverityLevel get getSeverityLevel {
+    final sum = severity.answers
+        .map(
+          (answer) =>
+              answer == AnswerValue.trueValue
+                  ? 2
+                  : answer == AnswerValue.partiallyTrue
+                  ? 1
+                  : 0,
+        )
+        .reduce((a, b) => a + b);
+
+    if (sum <= 8) return SeverityLevel.one;
+    if (sum <= 12) return SeverityLevel.two;
+    if (sum <= 18) return SeverityLevel.three;
+    return SeverityLevel.four;
+  }
+
   void saveAnswer(double value) {
     setState(() {
       sliderValues[currentQuestionIndex] = value;
+
       severity.answers[currentQuestionIndex] =
-          AnswerValue.values[(value * (AnswerValue.values.length - 1)).round()];
+          value == 0.0
+              ? AnswerValue.notTrue
+              : value == 0.5
+              ? AnswerValue.partiallyTrue
+              : AnswerValue.trueValue;
     });
   }
 
@@ -65,8 +88,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   Future<void> finishQuiz() async {
+    final finalSeverity = Severity(
+      id: 0,
+      answers: severity.answers,
+      level: getSeverityLevel,
+    );
+
+    print('Severity level: ${finalSeverity.level}');
+
     // TODO: fix error here
-    await userController.saveSeverity(severity);
+    await userController.saveSeverity(finalSeverity);
     await userController.setShowOnboarding();
   }
 

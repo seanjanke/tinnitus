@@ -6,6 +6,7 @@ import 'package:tinnitus/core/navigation/routes.dart';
 import 'package:tinnitus/core/theme/theme.dart';
 import 'package:tinnitus/data/controllers/recommendations_controller.dart';
 import 'package:tinnitus/data/controllers/user_controller.dart';
+import 'package:tinnitus/data/models/recom.dart';
 import 'package:tinnitus/presentation/pages/home/components/recommendation_tile.dart';
 import 'package:tinnitus/presentation/util/easy_theme.dart';
 
@@ -21,26 +22,54 @@ class _HomeScreenState extends State<HomeScreen> {
   final recommendationsController = Get.find<RecommendationsController>();
   final userController = Get.find<UserController>();
 
+  List<Recommendation> get filteredRecommendations {
+    final searchText = searchInputController.text.toLowerCase();
+    if (searchText.isEmpty) {
+      return recommendationsController.userRecommendations;
+    } else {
+      return recommendationsController.userRecommendations.where((
+        recommendation,
+      ) {
+        return recommendation.title
+            .getString(context)
+            .toLowerCase()
+            .contains(searchText);
+      }).toList();
+    }
+  }
+
   Widget buildForYou() {
     return Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Obx(
-              () => ListView.builder(
-                itemCount: recommendationsController.userRecommendations.length,
+      child:
+          filteredRecommendations.isNotEmpty
+              ? ListView.builder(
+                itemCount: filteredRecommendations.length,
                 itemBuilder: (context, index) {
-                  final recommendation =
-                      recommendationsController.userRecommendations[index];
+                  final recommendation = filteredRecommendations[index];
 
                   return RecommendationTile(recommendation: recommendation);
                 },
+              )
+              : Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.magnifyingGlass,
+                      size: 48,
+                      color: context.colors.surfaceContainerHigh,
+                    ),
+                    gap20,
+                    Text(
+                      LocaleData.emptySearch.getString(context),
+                      style: context.texts.bodyLarge!.copyWith(
+                        color: context.colors.surfaceContainerHigh,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 
@@ -55,18 +84,14 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 Expanded(
-                  child: Obx(
-                    () => Text(
-                      userController.currentUser.value.name.isNotEmpty
-                          ? '${LocaleData.goodMorning.getString(context)}, ${userController.currentUser.value.name}'
-                          : LocaleData.forYou.getString(context),
-                      style: context.texts.headlineSmall,
-                    ),
+                  child: Text(
+                    'Find Your Relief',
+                    style: context.texts.headlineSmall,
                   ),
                 ),
               ],
             ),
-            gap16,
+            gap12,
             IntrinsicHeight(
               child: Row(
                 children: [
@@ -75,22 +100,33 @@ class _HomeScreenState extends State<HomeScreen> {
                       controller: searchInputController,
                       style: context.texts.bodyLarge,
                       cursorColor: context.colors.onSurface,
+                      cursorWidth: 2.5,
+                      cursorHeight: 24,
                       decoration: InputDecoration(
                         hintText: LocaleData.search.getString(context),
                         hintStyle: context.texts.bodyLarge!.copyWith(
-                          color: context.colors.surfaceContainerHighest,
+                          color: context.colors.surfaceContainerHigh,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: circ60,
-                          borderSide: BorderSide.none,
+                          borderSide: BorderSide(
+                            color: context.colors.surfaceContainerLowest,
+                            width: 2,
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: circ60,
-                          borderSide: BorderSide.none,
+                          borderSide: BorderSide(
+                            color: context.colors.surfaceContainerLowest,
+                            width: 1.5,
+                          ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: circ60,
-                          borderSide: BorderSide.none,
+                          borderSide: BorderSide(
+                            color: context.colors.surfaceContainerLowest,
+                            width: 1.5,
+                          ),
                         ),
                         isDense: true,
                         filled: true,
@@ -100,6 +136,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         fillColor: context.colors.surface,
                       ),
+                      onChanged: (_) {
+                        setState(
+                          () {},
+                        ); // Rebuild the widget when the search text changes
+                      },
                     ),
                   ),
                   gap12,
@@ -112,12 +153,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: BoxDecoration(
                           color: context.colors.surface,
                           shape: BoxShape.circle,
+                          border: Border.all(
+                            color: context.colors.surfaceContainerLowest,
+                            width: 2,
+                          ),
                         ),
                         child: Center(
                           child: FaIcon(
                             FontAwesomeIcons.filter,
                             size: 20,
-                            color: context.colors.surfaceContainerHighest,
+                            color: context.colors.surfaceContainerHigh,
                           ),
                         ),
                       ),
@@ -127,25 +172,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             gap32,
-            // Wrap(
-            //   spacing: 12,
-            //   runSpacing: 10,
-            //   children:
-            //       RecommendationCategory.values.map((category) {
-            //         return Container(
-            //           padding: padding8,
-            //           decoration: BoxDecoration(
-            //             color: context.colors.surface,
-            //             borderRadius: circ20,
-            //             border: Border.all(
-            //               color: context.colors.surfaceContainerLowest,
-            //               width: 1,
-            //             ),
-            //           ),
-            //           child: Text(category.displayName),
-            //         );
-            //       }).toList(),
-            // ),
             buildForYou(),
           ],
         ),

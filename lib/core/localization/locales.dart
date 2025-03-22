@@ -110,6 +110,7 @@ mixin LocaleData {
   static const howEffectiveWas = 'howEffectiveWas';
   static const forYouQuestion = 'forYouQuestion';
   static const save = 'save';
+  static const emptySearch = 'emptySearch';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -244,6 +245,7 @@ mixin LocaleData {
     howEffectiveWas: 'How effective was',
     forYouQuestion: 'for you?',
     save: 'Save',
+    emptySearch: 'No results found.\nPlease try a different search term.',
   };
 
   static const Map<String, dynamic> de = {
@@ -372,5 +374,7 @@ mixin LocaleData {
     howEffectiveWas: 'Wie effektiv war',
     forYouQuestion: 'für dich?',
     save: 'Speichern',
+    emptySearch:
+        'Keine Ergebnisse gefunden.\nBitte versuchen Sie einen anderen Suchbegriff.',
   };
 }

@@ -23,14 +23,14 @@ class Button extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
         decoration: BoxDecoration(
-          color: context.colors.primary,
+          color: bgColor ?? context.colors.primary,
           borderRadius: circ60,
         ),
         child: Center(
           child: Text(
             title,
             style: context.texts.labelMedium!.copyWith(
-              color: context.colors.onPrimary,
+              color: fgColor ?? context.colors.onPrimary,
             ),
             textAlign: TextAlign.center,
           ),

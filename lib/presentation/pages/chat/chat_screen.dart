@@ -105,7 +105,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 Expanded(
                   child: TextField(
                     controller: messageController,
-                    textCapitalization: TextCapitalization.words,
+                    textCapitalization: TextCapitalization.sentences,
+                    keyboardType: TextInputType.text,
                     minLines: 1,
                     maxLines: 5,
                     cursorColor: context.colors.onSurface,

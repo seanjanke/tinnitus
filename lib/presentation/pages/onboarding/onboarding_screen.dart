@@ -60,7 +60,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   }
 
+  Future<void> skip() async {
+    await userController.setShowOnboarding();
+  }
+
   Future<void> finishQuiz() async {
+    // TODO: fix error here
     await userController.saveSeverity(severity);
     await userController.setShowOnboarding();
   }
@@ -111,14 +116,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     minHeight: 14,
                     value: (currentQuestionIndex + 1) / questionKeys.length,
                     backgroundColor: context.colors.surface,
-                    valueColor: AlwaysStoppedAnimation(
-                      context.colors.surfaceContainerHighest,
-                    ),
+                    valueColor: AlwaysStoppedAnimation(context.colors.primary),
                   ),
                 ),
                 gap20,
                 GestureDetector(
-                  onTap: finishQuiz,
+                  onTap: skip,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                       vertical: 6,
@@ -151,6 +154,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             Button(
               title: LocaleData.next.getString(context),
+              bgColor: context.colors.onSurface,
               onTap: nextQuestion,
             ),
           ],
@@ -186,14 +190,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget buildAnswerSlider(double currentValue) {
     return Column(
       children: [
-        Slider(
-          value: currentValue,
-          min: 0.0,
-          max: 1.0,
-          divisions: 2,
-          padding: EdgeInsets.zero,
-          label: getSliderValueLabel(currentValue),
-          onChanged: saveAnswer,
+        SliderTheme(
+          data: SliderTheme.of(context).copyWith(
+            trackHeight: 10,
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 20),
+            inactiveTrackColor: context.colors.surfaceContainerLow,
+          ),
+          child: Slider(
+            value: currentValue,
+            min: 0.0,
+            max: 1.0,
+            divisions: 2,
+            padding: EdgeInsets.zero,
+            label: getSliderValueLabel(currentValue),
+            onChanged: saveAnswer,
+          ),
         ),
         gap24,
         Row(

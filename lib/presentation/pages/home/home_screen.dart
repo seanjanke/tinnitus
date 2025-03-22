@@ -26,11 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            LocaleData.forYou.getString(context),
-            style: context.texts.labelLarge,
-          ),
-          gap12,
           Expanded(
             child: Obx(
               () => ListView.builder(

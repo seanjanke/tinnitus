@@ -106,6 +106,10 @@ mixin LocaleData {
   static const severityLevel3Description = 'severityLevel3Description';
   static const severityLevel4Description = 'severityLevel4Description';
   static const testAgain = 'testAgain';
+  static const completed = 'completed';
+  static const howEffectiveWas = 'howEffectiveWas';
+  static const forYouQuestion = 'forYouQuestion';
+  static const save = 'save';
 
   static const Map<String, dynamic> en = {
     home: 'Home',
@@ -173,47 +177,47 @@ mixin LocaleData {
     recommendation20: 'Functional medicine referral',
     recommendation21: 'Chocolate meditation',
     description1:
-        'Improve hearing in patients with hearing loss and may reduce tinnitus perception by increasing ambient sound.',
+        'Improves hearing in patients with hearing loss, while also potentially enhancing their overall quality of life.\n\nBy increasing ambient sound, it helps to mask the tinnitus, making it less noticeable and allowing the brain to focus on external sounds rather than the internal noise of tinnitus.\n\nThis audiological approach can assist in reducing the distressing effects of tinnitus and offer patients a more natural hearing experience.',
     description2:
-        'Can significantly reduce tinnitus perception in individuals with severe-to-profound bilateral sensorineural hearing loss.',
+        'Can significantly reduce the perception of tinnitus, especially in individuals with severe-to-profound bilateral sensorineural hearing loss.\n\nThis method works by optimizing the existing hearing ability, improving speech understanding, and masking the disruptive tinnitus sound.\n\nAs a result, it helps individuals better cope with tinnitus on a daily basis and brings noticeable relief from the constant ringing or buzzing in the ears.',
     description3:
-        'Structured education to improve understanding of tinnitus and reduce distress; foundational part of tinnitus management.',
+        'A structured educational program designed to enhance understanding of tinnitus and reduce the emotional distress it causes.\n\nIt focuses on providing patients with information about the nature of tinnitus, its causes, and the various management strategies available.\n\nThis is a fundamental part of any comprehensive tinnitus management plan, helping patients develop coping mechanisms and improve their overall well-being.',
     description4:
-        'The most evidence-supported psychological therapy for tinnitus; reduces distress and improves coping.',
+        'The most widely supported psychological therapy for tinnitus, it has proven to be effective in reducing emotional distress and improving coping mechanisms.\n\nThrough cognitive-behavioral techniques, this therapy helps patients reframe their perceptions of tinnitus and manage the negative emotional reactions it can provoke.\n\nStudies consistently show that it significantly reduces the impact of tinnitus on daily life, making it one of the most reliable treatment options.',
     description5:
-        'Combines directive counseling with sound enrichment aimed at habituation; long-term behavioral intervention.',
+        'A combined approach that integrates directive counseling with sound enrichment designed to promote habituation to tinnitus.\n\nThe counseling provides emotional support and practical advice, while sound enrichment aims to help the brain adapt to tinnitus by introducing soothing background sounds.\n\nThis long-term behavioral intervention can significantly reduce the impact of tinnitus, providing ongoing relief for those who struggle with constant ringing or buzzing.',
     description6:
-        'A mindfulness-based behavioral therapy shown to reduce tinnitus distress in some individuals.',
+        'A mindfulness-based behavioral therapy that has been shown to reduce the distress caused by tinnitus in some individuals.\n\nThis therapy focuses on increasing awareness of the present moment and developing a non-judgmental attitude toward tinnitus.\n\nBy teaching patients to observe their tinnitus without emotional reaction, it can help reduce the intensity of distress and promote better overall emotional well-being.',
     description7:
-        'Music-based interventions may support relaxation and distraction but lack strong evidence as standalone therapy.',
+        'Music-based interventions have been shown to aid in relaxation and provide distraction from tinnitus symptoms.\n\nHowever, the evidence supporting their effectiveness as a standalone treatment for tinnitus is limited.\n\nWhile music may help some individuals cope with tinnitus, it is not a substitute for more evidence-based therapies and is typically used in conjunction with other treatments.',
     description8:
-        'Use of external sounds (e.g. white noise) to reduce tinnitus contrast and promote habituation.',
+        'External sounds, such as white noise, are used to reduce the contrast between the tinnitus sound and external noises.\n\nBy masking the tinnitus, this approach helps the brain to habituate to the sound over time, making it less noticeable and distressing.\n\nThis technique is commonly used in sound therapy and can be particularly helpful in environments where the tinnitus is most prominent, like quiet settings.',
     description9:
-        'Used for treating comorbid depression or anxiety; not directly effective for tinnitus symptoms.',
+        'This treatment is primarily used for managing comorbid depression or anxiety, which often accompany tinnitus.\n\nAlthough it can be helpful for improving mood and reducing anxiety, it is not directly effective for treating the symptoms of tinnitus.\n\nPatients may experience an improvement in their overall mental health, which can indirectly help them manage the emotional impact of tinnitus.',
     description10:
-        'May reduce acute distress or aid sleep short-term; not recommended for long-term use due to dependence risk.',
+        'This approach may help reduce acute distress or promote sleep in the short term, offering temporary relief for those struggling with tinnitus-related anxiety or insomnia.\n\nHowever, due to the risk of dependence, it is not recommended for long-term use.\n\nPatients are advised to seek alternative treatments for long-term management of tinnitus to avoid the potential negative effects of prolonged use.',
     description11:
-        'May support sleep quality in tinnitus patients; limited evidence for direct tinnitus relief.',
+        'This approach may support sleep quality in tinnitus patients by promoting relaxation and reducing stress levels.\n\nHowever, the evidence for its direct effect on relieving tinnitus symptoms is limited, and it may not be effective for all individuals.\n\nWhile improving sleep can help reduce the overall burden of tinnitus, further research is needed to determine its efficacy in direct tinnitus relief.',
     description12:
-        'Currently lacks reliable evidence and may worsen symptoms in some individuals.',
+        'Currently, there is a lack of reliable evidence supporting this treatment for tinnitus relief.\n\nIn fact, in some cases, the use of this approach may exacerbate symptoms, making the tinnitus more noticeable or distressing.\n\nPatients are advised to approach this option with caution and consult with healthcare providers before attempting it.',
     description13:
-        'Behavioral strategies to improve sleep hygiene; first-line recommendation for tinnitus-related insomnia.',
+        'Behavioral strategies aimed at improving sleep hygiene are crucial for managing tinnitus-related insomnia.\n\nThese strategies focus on creating a sleep-conducive environment and establishing healthy sleep habits.\n\nImproving sleep hygiene is a first-line recommendation for individuals experiencing sleep disturbances due to tinnitus, as it has been shown to significantly improve overall sleep quality.',
     description14:
-        'Experimental psychedelic compound being researched; not approved for clinical use in tinnitus treatment.',
+        'This experimental psychedelic compound is currently being researched for its potential effects on tinnitus and other conditions.\n\nWhile there is some interest in its therapeutic benefits, it is not approved for clinical use in the treatment of tinnitus at this time.\n\nAs an experimental treatment, its safety and efficacy have not been established, and more studies are needed before it can be considered for broader use.',
     description15:
-        'Mindfulness meditation practice focused on body awareness and emotional balance; supports stress regulation.',
+        'Mindfulness meditation focuses on enhancing body awareness and emotional balance, which can be beneficial for stress regulation.\n\nBy fostering a mindful approach to emotions and bodily sensations, this practice can help individuals manage the psychological distress associated with tinnitus.\n\nIn addition to reducing stress, mindfulness meditation supports overall emotional well-being, which can indirectly improve the coping ability of tinnitus sufferers.',
     description16:
-        'Growing evidence supports mindfulness for reducing tinnitus-related distress and reactivity.',
+        'There is growing evidence supporting the use of mindfulness practices for reducing tinnitus-related distress and reactivity.\n\nMindfulness helps individuals develop greater awareness of their thoughts and emotions, enabling them to respond to tinnitus with less distress.\n\nBy fostering a calm, focused mindset, mindfulness practices have been shown to reduce the intensity of tinnitus-related reactivity and improve overall well-being.',
     description17:
-        'Focuses on gut-brain connection; may support mental health, though evidence for tinnitus is limited.',
+        'This approach focuses on the connection between the gut and brain, which may have potential benefits for mental health.\n\nAlthough the evidence supporting its direct effect on tinnitus is limited, there is some indication that improving gut health may positively influence mood and stress levels.\n\nFurther research is needed to explore its impact specifically on tinnitus and determine its effectiveness for individuals experiencing the condition.',
     description18:
-        'No strong evidence supports dairy elimination for tinnitus; trial only if lactose sensitivity is suspected.',
+        'Currently, there is no strong evidence supporting the idea that eliminating dairy from the diet can reduce tinnitus symptoms.\n\nHowever, some individuals may experience relief if they have underlying lactose sensitivity, so a trial elimination may be worth considering.\n\nIt is recommended that this approach be used cautiously and only if there is suspicion of lactose intolerance, as it is not a widely supported treatment for tinnitus.',
     description19:
-        'Holistic approach investigating potential underlying issues; evidence in tinnitus care is still limited.',
+        'This holistic approach investigates potential underlying issues that may contribute to tinnitus symptoms.\n\nIt aims to address broader factors such as stress, emotional health, and lifestyle that could be influencing the condition.\n\nWhile this method shows promise, the evidence for its efficacy in tinnitus care remains limited, and further studies are needed to establish its benefits.',
     description20:
-        'Psychodynamic or somatic methods to uncover emotional triggers; not clinically validated for tinnitus.',
+        'Psychodynamic and somatic methods are used to uncover emotional triggers that may be exacerbating tinnitus symptoms.\n\nThese approaches focus on exploring emotional experiences and bodily sensations to identify and process unresolved emotional conflicts.\n\nHowever, these methods have not been clinically validated for tinnitus treatment and should be considered as part of a broader therapeutic strategy.',
     description21:
-        'A sensory mindfulness exercise using chocolate; may help beginners engage with meditative awareness.',
+        'This sensory mindfulness exercise uses chocolate as a focal point to help individuals engage with meditative awareness.\n\nBy focusing on the experience of tasting and savoring chocolate, participants can develop a heightened sense of mindfulness and presence in the moment.\n\nIt may be particularly useful for beginners looking to explore mindfulness meditation and improve their ability to focus and regulate attention.',
     sendMessage: 'Send Message',
     chatWithAI: 'Chat with AI',
     back: 'Back',
@@ -236,6 +240,10 @@ mixin LocaleData {
         'Your tinnitus is having a major impact on your well-being - comprehensive specialist care is urgently recommended.',
     yourProfile: 'Your Profile',
     testAgain: 'Test Again',
+    completed: 'Completed!',
+    howEffectiveWas: 'How effective was',
+    forYouQuestion: 'for you?',
+    save: 'Save',
   };
 
   static const Map<String, dynamic> de = {
@@ -360,5 +368,9 @@ mixin LocaleData {
         'Ihr Tinnitus wirkt sich stark auf Ihr Wohlbefinden aus – eine umfassende fachliche Betreuung ist dringend empfehlenswert.',
     yourProfile: 'Dein Profil',
     testAgain: 'Erneut testen',
+    completed: 'Abgeschlossen!',
+    howEffectiveWas: 'Wie effektiv war',
+    forYouQuestion: 'für dich?',
+    save: 'Speichern',
   };
 }

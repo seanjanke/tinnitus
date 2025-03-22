@@ -13,4 +13,9 @@ class RecommendationsController extends GetxController {
 
     userRecommendations.value = allRecommendations;
   }
+
+  Future<void> rateRecommendation({
+    required Recommendation recommendation,
+    required int rating,
+  }) async {}
 }
